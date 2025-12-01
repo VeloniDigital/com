@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veloni Digital – Coming Soon</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #0a0f1f;
+        color: #fff;
+        overflow: hidden;
+    }
+
+    .container {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Neon Glow Logo */
+    .logo {
+        font-size: 80px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+        color: #48a8ff;
+        text-shadow: 0 0 15px #007bff, 0 0 40px #007bff;
+    }
+
+    .vel-symbol {
+        color: gold;
+        font-size: 28px;
+        margin-left: 8px;
+        text-shadow: 0 0 12px gold;
+    }
+
+    .tagline {
+        font-size: 20px;
+        font-weight: 300;
+        margin-top: -10px;
+        margin-bottom: 40px;
+        color: #cfe6ff;
+        letter-spacing: 1px;
+    }
+
+    .coming {
+        font-size: 42px;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 0 0 15px #48a8ff;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 12px #007bff; }
+        to { text-shadow: 0 0 25px #48a8ff; }
+    }
+
+    /* Animated background grid */
+    .grid {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0; left: 0;
+        background: linear-gradient(transparent 95%, rgba(0,122,255,0.2) 100%),
+                    linear-gradient(90deg, transparent 95%, rgba(0,122,255,0.2) 100%);
+        background-size: 60px 60px;
+        animation: move 20s linear infinite;
+        z-index: -1;
+    }
+
+    @keyframes move {
+        0% { background-position: 0 0; }
+        100% { background-position: 600px 600px; }
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 20px;
+        font-size: 14px;
+        opacity: 0.7;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="grid"></div>
+
+<div class="container">
+    <div class="logo">&lt; VD /&gt;<span class="vel-symbol"></span></div>
+
+    <div class="tagline">Smart e-Services</div>
+
+    <div class="coming">Launching Soon...</div>
+</div>
+
+<div class="footer">Veloni Digital © 2025 — All Rights Reserved</div>
+
+</body>
+</html>
