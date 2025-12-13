@@ -1354,3 +1354,62 @@ main,
   pointer-events: none;
   z-index: -1;
 }
+
+
+
+
+
+
+
+
+
+
+/* Bubble Container */
+.bubble {
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 999;
+}
+
+/* Show Bubble */
+.bubble.show {
+  transform: scale(1);
+}
+
+/* Icon Styling */
+.bubble a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #00b4ff, #6f00ff);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+.bubble a:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Contact Link Styling (optional) */
+#contactBtn {
+  cursor: pointer;
+  color: #a4aecc;
+  font-weight: bold;
+  text-decoration: underline;
+}

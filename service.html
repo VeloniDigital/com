@@ -14,31 +14,36 @@
 
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
+
+    <!-- Include FontAwesome CDN for icons -->
+   <link
+   rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
 </head>
 
 <body>
   <!-- Header -->
   <header>
-    <a href="index.html" class="brand-link">
-      <div class="brand">
-        <div class="logo">V</div>
-        <div>
-          <div style="font-size:18px;color:#fff">Veloni Digital</div>
-          <div style="font-weight:700;color:#fff;letter-spacing:0.3px">
-            <span class="kicker">Premium Web Studio • Smart e-Services</span>
-          </div>
-        </div>
+  <a href="index.html" class="brand-link">
+  <div class="brand">
+    <div class="logo">V</div>
+    <div>
+      <div style="font-size:18px;color:#fff var(--muted)">Veloni Digital</div>
+      <div class="kicker">
+        The Premium Web Studio <span class="separator">• Smart e-Services</span>
       </div>
-    </a>
+    </div>
+  </div>
+</a>
 
     <nav>
       <a href="index.html">Home</a>
-      <a href="services.html" class="active">Services</a>
+      <a href="service.html" class="active">Services</a>
       <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Contact</a> 
+      <a href="#" id="service-contact" class="contact-link">Contact</a>
       <a class="cta" href="index.html">Start Project</a>
-    
     </nav>
+
   </header>
   
 <style>
@@ -464,6 +469,18 @@ items.forEach(item=>{
     <span>Premium Web Studio • Smart e-Service</span>
   </div>
 </footer>
+
+
+
+
+<!-- Contact Bubble Popup -->
+<div id="contactBubble" class="bubble">
+  <a href="tel:+916381918347" title="Call"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/916381918347" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="mailto:velonidigital@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+</div>
+
+
 
 
 

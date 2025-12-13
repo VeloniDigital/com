@@ -82,3 +82,45 @@ Hello, I’d like to start a project.`;
 modal.addEventListener('click', e => {
   if(e.target === modal) modal.style.display = 'none';
 });
+
+
+
+
+
+
+
+
+
+
+// Bubble element
+const contactBubble = document.getElementById('contactBubble');
+
+// Collect all elements that should trigger the bubble
+const triggers = [
+  document.querySelector('#contactBtn'),
+  document.querySelector('#service-contact'),
+  document.querySelector('.tagline-badge')
+].filter(el => el !== null);
+
+// Toggle bubble on click
+triggers.forEach(trigger => {
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (contactBubble) {
+      contactBubble.classList.toggle('show');
+    }
+
+    // Scroll to contact section if exists
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Hide bubble when clicking outside
+window.addEventListener('click', (e) => {
+  if (contactBubble && !contactBubble.contains(e.target) && !triggers.some(t => t.contains(e.target))) {
+    contactBubble.classList.remove('show');
+  }
+});
