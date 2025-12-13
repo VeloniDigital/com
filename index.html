@@ -1,125 +1,422 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Veloni Digital - Premium Web Studio | Smart e-Service</title>
+  <meta name="description" content="Veloni Digital — futuristic web & app builds, smart eServices and e-governance support. Fully responsive, high-performance designs." />
 
-  <title>Veloni Digital | Premium Web Studio</title>
-  <link rel="icon" href="Diamond.webp" type="image/webp">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+  <link rel="icon" href="Diamond.webp" />
 
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        background: #0a0f1f;
-        color: #fff;
-        overflow: hidden;
-    }
-
-    .container {
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    /* Neon Glow Logo */
-    .logo {
-        font-size: 80px;
-        font-weight: 700;
-        letter-spacing: 3px;
-        margin-bottom: 10px;
-        color: #48a8ff;
-        text-shadow: 0 0 15px #007bff, 0 0 40px #007bff;
-    }
-
-    .vel-symbol {
-        color: gold;
-        font-size: 28px;
-        margin-left: 8px;
-        text-shadow: 0 0 12px gold;
-    }
-
-    .tagline {
-        font-size: 20px;
-        font-weight: 300;
-        margin-top: -10px;
-        margin-bottom: 40px;
-        color: #cfe6ff;
-        letter-spacing: 1px;
-    }
-
-    .coming {
-        font-size: 42px;
-        font-weight: 700;
-        color: #fff;
-        text-shadow: 0 0 15px #48a8ff;
-        animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-        from { text-shadow: 0 0 12px #007bff; }
-        to { text-shadow: 0 0 25px #48a8ff; }
-    }
-
-    /* Animated background grid */
-    .grid {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0; left: 0;
-        background: linear-gradient(transparent 95%, rgba(0,122,255,0.2) 100%),
-                    linear-gradient(90deg, transparent 95%, rgba(0,122,255,0.2) 100%);
-        background-size: 60px 60px;
-        animation: move 20s linear infinite;
-        z-index: -1;
-    }
-
-    @keyframes move {
-        0% { background-position: 0 0; }
-        100% { background-position: 600px 600px; }
-    }
-
-    .footer {
-        position: absolute;
-        bottom: 20px;
-        font-size: 14px;
-        opacity: 0.7;
-    }
-</style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="grid"></div>
+<header>
+  <a href="index.html" class="brand-link">
+  <div class="brand">
+    <div class="logo">V</div>
+    <div>
+      <div style="font-size:18px;color:#fff var(--muted)">Veloni Digital</div>
+      <div style="font-weight:700;color:#fff;letter-spacing:0.3px">  <span class="kicker">Premium Web Studio • Smart e-Services</span></div>
+    </div>
+  </div>
+</a>
 
-<div class="container">
-    <div class="logo">&lt; VD /&gt;<span class="vel-symbol"></span></div>
+  <nav>
+    <a href="service.html" target="_blank">Services</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+    <a class="cta" href="#" id="openModal">Start Project</a>
 
-    <div class="tagline">Smart e-Services</div>
+  </nav>
 
-    <div class="coming">
-    <a href="tel:+916381918347" style="color:#fff; text-decoration:none;">
-        📞+91 63 8191 8347
-    </a>
+  <button class="menu-btn" aria-label="open menu">
+    <i class="ri-menu-line"></i>
+  </button>
+</header>
+
+<main class="container">
+  <div class="orb one" aria-hidden></div>
+  <div class="orb two" aria-hidden></div>
+<!-- HERO -->
+<section class="hero">
+
+  <!-- LEFT CONTENT -->
+  <div class="hero-content">
+    <div class="hero-card">
+  <div class="tagline-badge">
+    <i class="ri-flashlight-fill"></i>
+    <span>A Complete Website. Delivered in 1 Day.</span>
+  </div>
+</div>
+    <h2>Futuristic Digital Products. Built for speed, privacy & scale.</h2>
+
+    <p class="lead">
+      Veloni Digital provides fast and reliable website development, local e-services, printing, e-Sevai support, 
+      and digital marketing solutions for all from one trusted service center with modern design and quick delivery.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="cta cta-explore" href="service.html" target="_blank" rel="noopener">
+          <span class="cta-text">Explore Services</span>
+          <span class="cta-sub">See what we can do for you →</span>
+        </a>
+
+
+       <a style="color:var(--muted);font-weight:700" href="#pricing">View Pricing</a>
+    </div>
+
+<div class="glass-stats" aria-hidden="true">
+  <div class="stat"><strong>0%</strong><span>Template Usage</span></div>
+  <div class="stat"><strong>SEO</strong><span>Optimized Build</span></div>
+  <div class="stat">
+    <strong class="count" data-target="100">0%</strong>
+    <span>Mobile Friendly</span>
+</div>
+
 </div>
 
 
+  </div>
+
+<div class="hero-art">
+
+  <!-- DotLottie Web Component -->
+<script type="module" src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js"></script>
+
+<!-- Hero Animation -->
+<div class="hero-art" style="width:100%; max-width:400px; margin:auto;">
+  <dotlottie-wc 
+      src="https://lottie.host/4eabf346-1385-4463-b0a3-d3a3618bf1a1/4fi9Qiv4Bx.lottie" 
+      style="width:100%; height:350px;" 
+      autoplay 
+      loop>
+  </dotlottie-wc>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- WHY CHOOSE VELONI -->
+<section id="why-choose-veloni" class="why-section">
+  <div class="why-container">
+
+    <!-- Section Header -->
+    <div class="why-header">
+      <span class="why-kicker">WHY CHOOSE VELONI?</span>
+      <h2>Smart Solutions. Fast Delivery.<br>Trusted Digital Service.</h2>
+      <p>
+        Veloni Digital delivers modern digital, technical and smart e-services
+        designed to help individuals and businesses move faster with confidence.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="why-grid">
+
+      <div class="why-card">
+        <i class="ri-flashlight-line"></i>
+        <h4>Quick & Reliable Service</h4>
+        <p>
+          We value your time. Our process is built for fast execution with
+          consistent quality.
+        </p>
+      </div>
+
+      <div class="why-card highlight">
+        <i class="ri-time-line"></i>
+        <h4>One-Day Website Delivery</h4>
+        <p>
+          Get a professional, mobile-ready website delivered within 24 hours
+          when speed matters most.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <i class="ri-smartphone-line"></i>
+        <h4>100% Mobile-Friendly</h4>
+        <p>
+          Every website and service is optimized for mobile, tablet and desktop
+          users.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <i class="ri-price-tag-3-line"></i>
+        <h4>Affordable Pricing</h4>
+        <p>
+          Premium-level services with transparent pricing and zero hidden costs.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <i class="ri-shield-check-line"></i>
+        <h4>Trusted by Local Customers</h4>
+        <p>
+          Serving individuals and businesses with trust, accuracy and reliable
+          support.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <i class="ri-stack-line"></i>
+        <h4>All Services in One Place</h4>
+        <p>
+          Digital, technical, documentation and government services — under one
+          roof.
+        </p>
+      </div>
 
     </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="brand-core">
+  <div class="brand-container">
+
+    <!-- CENTER -->
+    <div class="brand-center">
+      <span class="brand-kicker">VELONI DIGITAL</span>
+      <h2>One Brand.<br>Every Digital Need.</h2>
+      <p>
+        Websites, visibility, smart services and governance support,
+        Veloni unifies everything into one trusted digital ecosystem.
+      </p>
+    </div>
+
+    <!-- DESKTOP ORBIT -->
+    <div class="brand-orbit">
+      <div class="orbit-item"><i class="ri-global-line"></i><span>Website</span></div>
+      <div class="orbit-item"><i class="ri-megaphone-line"></i><span>Google Ads</span></div>
+      <div class="orbit-item"><i class="ri-map-pin-line"></i><span>Google My Business</span></div>
+      <div class="orbit-item"><i class="ri-apps-line"></i><span>App Development</span></div>
+      <div class="orbit-item"><i class="ri-id-card-line"></i><span>PAN & Aadhaar</span></div>
+      <div class="orbit-item"><i class="ri-stack-line"></i><span>Smart e-Services</span></div>
+    </div>
+
+    <!-- MOBILE GRID -->
+    <div class="brand-grid">
+      <div class="brand-tile"><i class="ri-global-line"></i><span>Website</span></div>
+      <div class="brand-tile"><i class="ri-megaphone-line"></i><span>Google Ads</span></div>
+      <div class="brand-tile"><i class="ri-map-pin-line"></i><span>Google My Business</span></div>
+      <div class="brand-tile"><i class="ri-apps-line"></i><span>App Development</span></div>
+      <div class="brand-tile"><i class="ri-id-card-line"></i><span>PAN & Aadhaar</span></div>
+      <div class="brand-tile"><i class="ri-stack-line"></i><span>Smart e-Services</span></div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- ===============================
+     CONVERSION CTA SECTION
+================================ -->
+<section class="cta-section">
+  <div class="cta-container">
+
+    <div class="cta-content">
+      <span class="cta-kicker">READY TO START?</span>
+
+      <h2>
+        Let’s Build Something<br>
+        <span>That Brings You Customers</span>
+      </h2>
+
+      <p>
+        Whether it’s a website, Google visibility, ads, or government services,
+        Veloni gives you clear guidance, fast execution, and trusted support.
+      </p>
+      
+      <div class="cta-actions">
+        <a href="https://wa.me/916381918347?text=Hi%20Veloni%20Digital%2C%20I%20am%20interested%20in%20your%20services.%20Please%20guide%20me."
+        target="_blank"
+        rel="noopener"
+        class="btn primary">
+        <i class="ri-whatsapp-line"></i> WhatsApp Now 
+      </a>
+        <a href="tel:6381918347" class="btn secondary">
+          <i class="ri-phone-line"></i> Call Veloni
+        </a>
+        <a href="https://maps.app.goo.gl/Pd7s9erAxGDrGN939"
+           target="_blank"
+           rel="noopener"
+           class="btn outline"> Visit Office
+          </a>
+      </div>
+
+      <div class="cta-trust">
+        <span>✔ Quick Response</span>
+        <span>✔ Local Support</span>
+        <span>✔ Affordable Pricing</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- ===============================
+     ULTRA PREMIUM FOOTER
+================================ -->
+<footer class="premium-footer">
+  <div class="footer-glow"></div>
+
+  <div class="footer-wrap">
+
+    <!-- LEFT : BRAND -->
+    <div class="footer-brand">
+      <div class="brand-badge">V</div>
+      <h3>Veloni Digital</h3>
+      <p>
+        Premium Web Studio & Smart e-Service hub delivering
+        technology, visibility, and trusted government services
+        for local businesses and individuals.
+      </p>
+
+      <div class="footer-actions">
+        <a href="tel:6381918347"><i class="ri-phone-line"></i></a>
+        <a href="https://wa.me/916381918347" target="_blank"><i class="ri-whatsapp-line"></i></a>
+        <a href="mailto:velonidigital@gmail.com"><i class="ri-mail-line"></i></a>
+      </div>
+    </div>
+
+    <!-- CENTER : OFFICE -->
+    <div class="footer-office">
+      <h4>Office & Support</h4>
+
+      <div class="office-item">
+        <i class="ri-map-pin-line"></i>
+        <span>Tiruppur, Tamil Nadu</span>
+      </div>
+
+      <div class="office-item">
+        <i class="ri-time-line"></i>
+        <span>Mon – Sat : 9:30 AM – 8:30 PM</span>
+      </div>
+
+      <div class="office-item">
+        <i class="ri-shield-check-line"></i>
+        <span>Trusted Local Service</span>
+      </div>
+
+      <a href="https://maps.app.goo.gl/Pd7s9erAxGDrGN939"
+         target="_blank"
+         class="direction-btn">
+        Get Directions
+      </a>
+    </div>
+
+    <!-- RIGHT : MAP -->
+    <div class="footer-map-box">
+      <iframe
+        src="https://www.google.com/maps?q=Veloni%20Digital%20Tiruppur&output=embed"
+        loading="lazy">
+      </iframe>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <span>© 2025 Veloni Digital</span>
+    <span>Premium Web Studio • Smart e-Service</span>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- START PROJECT MODAL -->
+<div class="modal-overlay" id="projectModal">
+  <div class="modal">
+    <h3>Start Your Project</h3>
+    <p>Select the service you’re interested in</p>
+
+    <select id="serviceSelect">
+      <option value="">Select a Service</option>
+      <option>Tech Services</option>
+      <option>Digital Services</option>
+      <option>Document Work</option>
+      <option>Govt Services</option>
+    </select>
+
+    <div class="modal-actions">
+      <button class="btn-secondary" id="closeModal">Cancel</button>
+      <button class="btn-primary" id="sendWhatsApp">Continue to WhatsApp</button>
+    </div>
+  </div>
 </div>
 
-</div>
 
 
-<div class="footer">Veloni Digital © 2025. All Rights Reserved</div>
+
+
+
+
+<!-- External JS -->
+<script src="script.js"></script>
 
 </body>
 </html>

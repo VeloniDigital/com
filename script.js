@@ -1,176 +1,84 @@
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
+document.querySelector(".menu-btn").addEventListener("click", () => {
+  const nav = document.querySelector("nav");
 
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
-
-
-const visual = document.getElementById("visualImg");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      visual.classList.add("animate");
-      observer.unobserve(visual); // Only run once
-    }
-  });
-}, {
-  threshold: 0.5
-});
-
-observer.observe(visual);
-
-
-// Dynamically set background images from data-bg attributes
-document.querySelectorAll('.category-panel').forEach(panel => {
-  const bg = panel.getAttribute('data-bg');
-  if (bg) {
-    panel.style.backgroundImage = `url('${bg}')`;
+  if (nav.style.display === "flex") {
+    nav.style.display = "none";
+  } else {
+    nav.style.display = "flex";
+    nav.style.flexDirection = "column";
+    nav.style.position = "fixed";
+    nav.style.right = "16px";
+    nav.style.top = "72px";
+    nav.style.background =
+      "linear-gradient(180deg, rgba(2,6,23,0.9), rgba(2,6,23,0.95))";
+    nav.style.padding = "12px";
+    nav.style.borderRadius = "12px";
+    nav.style.gap = "12px";
   }
 });
 
 
-// Bridal slider with pause on hover/touch
-document.addEventListener('DOMContentLoaded', function () {
-  const slider = document.getElementById('bridalSlider');
-  if (!slider) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".count");
 
-  const images = Array.from(slider.querySelectorAll('img'));
-  if (images.length === 0) return;
+  counters.forEach(counter => {
+    const target = +counter.getAttribute("data-target");
+    let current = 0;
+    const speed = 20; // smaller = faster
 
-  let current = 0;
-  let intervalId = null;
-  const INTERVAL_MS = 5000;
+    const updateCount = () => {
+      if (current < target) {
+        current++;
+        counter.innerText = current + "%";
+        setTimeout(updateCount, speed);
+      } else {
+        counter.innerText = target + "%";
+      }
+    };
 
-  // Show a slide by index
-  function showSlide(index) {
-    images.forEach((img, i) => {
-      img.classList.toggle('active', i === index);
-      img.setAttribute('aria-hidden', i === index ? 'false' : 'true');
-    });
-  }
-
-  function nextSlide() {
-    current = (current + 1) % images.length;
-    showSlide(current);
-  }
-
-  // Start autoplay
-  function startAutoplay() {
-    if (intervalId) return;
-    intervalId = setInterval(nextSlide, INTERVAL_MS);
-  }
-
-  // Stop autoplay
-  function stopAutoplay() {
-    if (!intervalId) return;
-    clearInterval(intervalId);
-    intervalId = null;
-  }
-
-  // Initial
-  showSlide(current);
-  startAutoplay();
-
-  // Pause on hover (desktop)
-  slider.addEventListener('mouseenter', stopAutoplay);
-  slider.addEventListener('mouseleave', startAutoplay);
-
-  // For touch devices: pause while touching
-  slider.addEventListener('touchstart', stopAutoplay, { passive: true });
-  slider.addEventListener('touchend', startAutoplay, { passive: true });
-
-  // Optional: keyboard control (left/right)
-  slider.tabIndex = 0;
-  slider.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-      current = (current - 1 + images.length) % images.length;
-      showSlide(current);
-      stopAutoplay();
-    } else if (e.key === 'ArrowRight') {
-      nextSlide();
-      stopAutoplay();
-    }
+    updateCount();
   });
 });
 
 
 
+const modal = document.getElementById('projectModal');
+const openBtn = document.getElementById('openModal');
+const closeBtn = document.getElementById('closeModal');
+const sendBtn = document.getElementById('sendWhatsApp');
 
+openBtn.onclick = e => {
+  e.preventDefault();
+  modal.style.display = 'flex';
+};
 
-const hairCardData = [
-  {
-    img: "hair1.webp",
-    title: "Voluminous Curls",
-    desc: "Luxurious & long-lasting hold for glamorous evenings."
-  },
-  {
-    img: "hair2.webp",
-    title: "Glossy Straight",
-    desc: "Sleek, frizz-free with intense shine & smoothness."
-  },
-  {
-    img: "hair3.webp",
-    title: "Keratin Treatment",
-    desc: "Frizz-free smoothness that lasts up to 6 months."
-  },
-  {
-    img: "hair4.webp",
-    title: "Global Coloring",
-    desc: "Rich tone to enhance your personality with shine."
-  },
-  {
-    img: "hair5.webp",
-    title: "Bridal Hair",
-    desc: "Timeless traditional hairstyles for special day."
-  },
-];
+closeBtn.onclick = () => modal.style.display = 'none';
 
-const wrapper = document.getElementById("hairCardWrapper");
+sendBtn.onclick = () => {
+  const service = document.getElementById('serviceSelect').value;
+  if(!service){
+    alert('Please select a service');
+    return;
+  }
 
-function loadHairCards() {
-  hairCardData.forEach(card => {
-    const cardHTML = `
-      <div class="hair-card">
-        <div class="hair-card-inner">
-          <img src="${card.img}" alt="${card.title}">
-          <h3>${card.title}</h3>
-          <p>${card.desc}</p>
-        </div>
-      </div>`;
-    wrapper.innerHTML += cardHTML;
-  });
-}
+  const phone = "916381918347"; // YOUR NUMBER
+  const time = new Date().toLocaleString('en-IN');
 
-let cardIndex = 0;
+  const message =
+`#NewLead
+Service: ${service}
+Source: Website
+CTA: Start Project
+Time: ${time}
 
-function slideHairCards() {
-  const isMobile = window.innerWidth <= 768;
-  if (isMobile) return;
+Hello, I’d like to start a project.`;
 
-  const totalVisible = 2;
-  const totalCards = hairCardData.length;
-  const maxIndex = totalCards - totalVisible;
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url,'_blank');
+  modal.style.display = 'none';
+};
 
-  cardIndex = (cardIndex + 1) > maxIndex ? 0 : cardIndex + 1;
-  wrapper.style.transform = `translateX(-${cardIndex * 50}%)`;
-}
-
-loadHairCards();
-setInterval(slideHairCards, 4000);
-
-
-
-
-
-
-document.querySelectorAll('.category-panel').forEach(panel => {
-  panel.addEventListener('click', function(e) {
-    if (!this.classList.contains('active')) {
-      e.preventDefault(); // prevent link clicks until active
-      document.querySelectorAll('.category-panel').forEach(p => p.classList.remove('active'));
-      this.classList.add('active');
-    }
-  });
+// Close on outside click
+modal.addEventListener('click', e => {
+  if(e.target === modal) modal.style.display = 'none';
 });
