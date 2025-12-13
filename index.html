@@ -347,17 +347,18 @@
         <span>Trusted Local Service</span>
       </div>
 
+      
       <a href="https://maps.app.goo.gl/Pd7s9erAxGDrGN939"
-         target="_blank"
-         class="direction-btn">
-        Get Directions
-      </a>
+      class="direction-btn"
+      onclick="openMaps(event)">
+      Get Directions
+    </a>
     </div>
 
     <!-- RIGHT : MAP -->
     <div class="footer-map-box">
       <iframe
-        src="https://www.google.com/maps?q=Veloni%20Digital%20Tiruppur&output=embed"
+        src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.5856979612695!2d77.35709527575612!3d11.0696562890975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9a941c8c57965%3A0xa81d068f619462b9!2sVeloni%20Digital%20-%20Premium%20Web%20Studio%20%7C%20Smart%20eService!5e0!3m2!1sen!2sin!4v1765609378672!5m2!1sen!2sin "
         loading="lazy">
       </iframe>
     </div>
@@ -411,6 +412,18 @@
 
 
 
+<script>
+  function openMaps(e) {
+    e.preventDefault();
+    const mapsLink = "https://maps.app.goo.gl/Pd7s9erAxGDrGN939";
+
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      window.location.href = mapsLink;   // Auto-open Maps app
+    } else {
+      window.open(mapsLink, "_blank");   // Desktop → new tab
+    }
+  }
+</script>
 
 
 
