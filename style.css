@@ -1413,3 +1413,109 @@ main,
   font-weight: bold;
   text-decoration: underline;
 }
+
+
+
+
+/* Overlay */ 
+.popup-overlay { 
+  position: fixed; 
+  inset: 0; 
+  background: rgba(10, 15, 30, 0.7); 
+  backdrop-filter: blur(6px); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  opacity: 0; 
+  visibility: hidden; 
+  transition: 0.35s ease; 
+  z-index: 9999; }
+  
+  .popup-overlay.active { 
+    opacity: 1;
+    visibility: visible; } 
+   
+    /* Card */ 
+    
+    .popup-card { 
+      background: linear-gradient(180deg, #0f1724, #0b1020); 
+      border-radius: 18px; 
+      width: 92%; 
+      max-width: 420px; 
+      padding: 28px; 
+      color: #fff; 
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6); 
+      position: relative; 
+      animation: popupScale 0.4s ease; }
+      
+      /* Animation */ @keyframes 
+      popupScale { from { 
+        opacity: 0; 
+        transform: scale(0.9) translateY(20px); } to { 
+          opacity: 1; 
+          transform: scale(1) translateY(0); } } /* Close Button */ 
+          
+          .popup-close { 
+            position: absolute; 
+            top: 16px; 
+            right: 16px; 
+            background: transparent; 
+            border: none; 
+            color: #aaa; 
+            font-size: 24px; 
+            cursor: pointer; } 
+            
+            .popup-close:hover { 
+              color: #fff; } /* Title */ 
+              
+              .popup-title { 
+                margin: 0; 
+                font-size: 22px; 
+                font-weight: 600; } 
+                
+                .popup-subtitle { 
+                  margin: 6px 0 22px; 
+                  font-size: 14px; 
+                  color: rgba(255,255,255,0.6); } /* Form */ 
+                  
+                  .popup-form input, .popup-form textarea { 
+                    width: 100%; 
+                    padding: 12px 14px; 
+                    margin-bottom: 14px; 
+                    background: rgba(255,255,255,0.06); 
+                    border: 1px solid rgba(255,255,255,0.1); 
+                    border-radius: 10px; 
+                    color: #fff; 
+                    font-size: 14px; 
+                    outline: none; } 
+                    
+                    
+                  .popup-form input::placeholder, 
+                  
+                  .popup-form textarea::placeholder { 
+                    color: rgba(255,255,255,0.5); }
+                    
+                    /* Selected Service Highlight */ 
+                    #serviceInput { background: linear-gradient(90deg, rgba(0,180,255,0.15), rgba(111,0,255,0.15)); 
+                      border: 1px solid rgba(0,180,255,0.4); font-weight: 500; } /* Button */
+                      
+                      
+                      .popup-btn { 
+                        width: 100%; 
+                        padding: 14px; 
+                        border-radius: 12px; 
+                        border: none; 
+                        background: linear-gradient(90deg, #00b4ff, #6f00ff); 
+                        color: #fff; 
+                        font-size: 15px; 
+                        font-weight: 600; 
+                        cursor: pointer; 
+                        transition: transform 0.2s ease, box-shadow 0.2s ease; }
+                        
+                        .popup-btn:hover { 
+                          transform: translateY(-1px); 
+                          box-shadow: 0 10px 30px rgba(0,180,255,0.4); }
+
+
+
+                          

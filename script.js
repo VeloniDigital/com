@@ -124,3 +124,43 @@ window.addEventListener('click', (e) => {
     contactBubble.classList.remove('show');
   }
 });
+
+
+
+
+  const serviceSelect = document.getElementById('serviceSelect');
+
+  // Function to open popup
+  function openBookingPopup(serviceName = '') {
+    if (serviceName) {
+      serviceSelect.value = serviceName;
+    }
+
+    // OPEN YOUR POPUP HERE
+    // Example:
+    document.getElementById('contactBubble').classList.add('active');
+  }
+
+  // Click on service list item
+  document.querySelectorAll('.service-list li').forEach(item => {
+    item.addEventListener('click', () => {
+      const service = item.getAttribute('data-service');
+      openBookingPopup(service);
+    });
+  });
+
+  // Click on Book Now button
+  document.querySelectorAll('.book-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const service = btn.getAttribute('data-service');
+      openBookingPopup(service);
+    });
+  });
+
+
+
+
+
+
+  

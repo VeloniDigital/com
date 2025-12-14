@@ -40,7 +40,7 @@
       <a href="index.html">Home</a>
       <a href="service.html" class="active">Services</a>
       <a href="pricing.html">Pricing</a>
-      <a href="#" id="service-contact" class="contact-link">Contact</a>
+            <a href="index.html">Contact</a>
       <a class="cta" href="index.html">Start Project</a>
     </nav>
 
@@ -204,7 +204,7 @@ a{text-decoration:none;color:inherit}
 
 <body>
 
-<section class="services" id="services">
+  <section class="services" id="services">
   <div class="services-inner">
 
     <div class="services-header">
@@ -233,7 +233,7 @@ a{text-decoration:none;color:inherit}
             <li>Social Media Management</li>
             <li>Meta Ads & Google Ads Setup</li>
           </ul>
-          <a href="#booking" class="book-btn">Book Now</a>
+          <a href="#" class="book-btn" onclick="openBooking('Tech Services')">Book Now</a>
         </div>
       </div>
 
@@ -252,7 +252,7 @@ a{text-decoration:none;color:inherit}
             <li>Udyam / MSME Registration</li>
             <li>Bank & Fastag KYC Update & Recharge</li>
           </ul>
-          <a href="#booking" class="book-btn">Book Now</a>
+          <a href="#" class="book-btn" onclick="openBooking('Digital Services')">Book Now</a>
         </div>
       </div>
 
@@ -269,7 +269,7 @@ a{text-decoration:none;color:inherit}
             <li>Resume Creation</li>
             <li>School / College Projects</li>
           </ul>
-          <a href="#booking" class="book-btn">Book Now</a>
+          <a href="#" class="book-btn" onclick="openBooking('Document Work')">Book Now</a>
         </div>
       </div>
 
@@ -290,7 +290,7 @@ a{text-decoration:none;color:inherit}
             <li>TN Labor Registration</li>
             <li>Family Card Services</li>
           </ul>
-          <a href="#booking" class="book-btn">Book Now</a>
+          <a href="#" class="book-btn" onclick="openBooking('Govt Services')">Book Now</a>
         </div>
       </div>
 
@@ -298,10 +298,39 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
-<!-- BOOKING (DUMMY TARGET) -->
-<section id="booking">
-  <h2>Value of Service</h2>
-</section>
+
+
+<!-- BOOKING POPUP -->
+<div id="contactBubble" class="popup-overlay">
+  <div class="popup-card">
+    
+    <button class="popup-close" onclick="closeBooking()">×</button>
+
+    <h3 class="popup-title">Book a Service</h3>
+    <p class="popup-subtitle">Tell us what you need, we’ll take care of it.</p>
+
+    <form class="popup-form">
+      <input type="text" id="serviceInput" readonly>
+
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <textarea placeholder="Your Requirement"></textarea>
+
+      <button type="submit" class="popup-btn">Submit Request</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 <script>
 /* =====================
@@ -309,17 +338,30 @@ a{text-decoration:none;color:inherit}
 ===================== */
 const items = document.querySelectorAll('.accordion-item');
 
-items.forEach(item=>{
-  item.querySelector('.accordion-header').addEventListener('click',()=>{
-    items.forEach(i=>{
-      if(i!==item) i.classList.remove('active');
+items.forEach(item => {
+  item.querySelector('.accordion-header').addEventListener('click', () => {
+    items.forEach(i => {
+      if (i !== item) i.classList.remove('active');
     });
     item.classList.toggle('active');
   });
 });
+
+/* =====================
+   BOOKING POPUP LOGIC
+===================== */
+function openBooking(service) {
+  document.getElementById('serviceInput').value = service;
+  document.getElementById('contactBubble').classList.add('active');
+}
+
+function closeBooking() {
+  document.getElementById('contactBubble').classList.remove('active');
+}
 </script>
 
 
+  
 
 
 
@@ -438,7 +480,7 @@ items.forEach(item=>{
 
       <div class="office-item">
         <i class="ri-time-line"></i>
-        <span>Mon – Sat : 9:30 AM – 8:30 PM</span>
+        <span>Mon – Sun : 7:00 AM – 9:00 PM</span>
       </div>
 
       <div class="office-item">
@@ -469,17 +511,6 @@ items.forEach(item=>{
     <span>Premium Web Studio • Smart e-Service</span>
   </div>
 </footer>
-
-
-
-
-<!-- Contact Bubble Popup -->
-<div id="contactBubble" class="bubble">
-  <a href="tel:+916381918347" title="Call"><i class="fas fa-phone"></i></a>
-  <a href="https://wa.me/916381918347" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="mailto:velonidigital@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-</div>
-
 
 
 
