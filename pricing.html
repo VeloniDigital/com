@@ -1,0 +1,463 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Service | Veloni Digital - Premium Web Studio | Smart e-Service</title>
+  <meta name="description" content="Veloni Digital — futuristic web & app builds, smart eServices and e-governance support. Fully responsive, high-performance designs." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="review.png" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PAGE STYLES -->
+ 
+ 
+ <style>
+    :root{
+      --bg:#020617;
+      --panel:#020617;
+      --border:#1f2937;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#38bdf8;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter,system-ui;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    /* =====================
+       ELITE PRICING SECTION
+    ===================== */
+    .elite-pricing{
+      position:relative;
+      padding:140px 20px;
+      overflow:hidden;
+    }
+
+    .elite-pricing::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(700px 250px at 10% 10%, rgba(56,189,248,.08), transparent 45%),
+        radial-gradient(600px 200px at 90% 20%, rgba(14,165,233,.06), transparent 50%);
+      animation:floatGlow 12s ease-in-out infinite alternate;
+      pointer-events:none;
+    }
+
+    @keyframes floatGlow{
+      from{transform:translateY(0)}
+      to{transform:translateY(-40px)}
+    }
+
+    .pricing-container{
+      max-width:1100px;
+      margin:auto;
+      position:relative;
+    }
+
+    .pricing-head{
+      text-align:center;
+      margin-bottom:80px;
+    }
+
+    .pricing-kicker{
+      font-size:13px;
+      letter-spacing:2px;
+      color:var(--accent);
+    }
+
+    .pricing-head h1{
+      font-size:40px;
+      margin:14px 0;
+    }
+
+    .pricing-head h1 span{color:var(--accent)}
+
+    .pricing-head p{
+      color:var(--muted);
+      max-width:640px;
+      margin:auto;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(40px) scale(.96);
+      transition:all .9s cubic-bezier(.16,1,.3,1);
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+    .pricing-block{
+      margin-bottom:90px;
+    }
+
+    .pricing-block h2{
+      font-size:26px;
+      margin-bottom:30px;
+    }
+
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:26px;
+    }
+
+    .price-card{
+      position:relative;
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:34px;
+      transition:.5s cubic-bezier(.16,1,.3,1);
+    }
+
+    .price-card::after{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:linear-gradient(120deg,transparent 40%,rgba(56,189,248,.35),transparent 60%);
+      opacity:0;
+      transition:.6s;
+    }
+
+    .price-card:hover::after{opacity:1}
+
+    .price-card:hover{
+      transform:translateY(-12px) scale(1.02);
+      box-shadow:
+        0 30px 70px rgba(2,6,23,.85),
+        0 0 0 1px rgba(56,189,248,.35);
+    }
+
+    .tier{
+      color:var(--accent);
+      font-size:13px;
+      letter-spacing:1px;
+    }
+
+    .price{
+      margin-top:18px;
+      font-size:24px;
+      font-weight:800;
+    }
+
+    .highlight{
+      box-shadow:0 0 0 1px var(--accent);
+    }
+
+    .pricing-features{
+      margin-top:26px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    /* DIGITAL PRICING TABLE */
+    .pricing-table{
+      border:1px solid var(--border);
+      border-radius:18px;
+      overflow:hidden;
+    }
+
+    .pricing-row{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      padding:18px 22px;
+      border-bottom:1px solid var(--border);
+      transition:.3s;
+    }
+
+    .pricing-row.head{
+      background:#020617;
+      font-weight:600;
+    }
+
+    .pricing-row:hover{
+      background:linear-gradient(90deg,transparent,rgba(56,189,248,.06),transparent);
+    }
+
+    .pricing-row:last-child{border-bottom:none}
+
+    /* CTA */
+    .pricing-cta{
+      text-align:center;
+      background:#020617;
+      border:1px solid var(--accent);
+      border-radius:26px;
+      padding:60px 30px;
+      position:relative;
+    }
+
+    .pricing-cta::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius:inherit;
+      background:linear-gradient(90deg,#38bdf8,#0ea5e9,#38bdf8);
+      filter:blur(20px);
+      opacity:.25;
+      animation:pulse 3s infinite;
+      z-index:-1;
+    }
+
+    @keyframes pulse{
+      0%,100%{opacity:.25}
+      50%{opacity:.55}
+    }
+
+    @media(max-width:600px){
+      .pricing-row{grid-template-columns:1.5fr 1fr 1fr 1fr;font-size:13px}
+      .pricing-head h1{font-size:32px}
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <a href="index.html" class="brand-link">
+    <div class="brand">
+      <div class="logo">V</div>
+      <div>
+        <div style="font-size:18px;color:#fff;">Veloni Digital</div>
+        <div class="kicker">The Premium Web Studio • Smart e-Services</div>
+      </div>
+    </div>
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="service.html" class="active">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="index.html">Contact</a>
+    <a class="cta" href="index.html">Start Project</a>
+  </nav>
+</header>
+
+
+
+<!-- ================= PRICING ================= -->
+<section class="elite-pricing" id="pricing">
+  <div class="pricing-container">
+
+    <div class="pricing-head reveal">
+      <span class="pricing-kicker">TRANSPARENT PRICING</span>
+      <h1>Premium Digital Pricing<br><span>Built for Growth</span></h1>
+      <p>Luxury-grade pricing crafted for individuals, startups and fast-growing businesses.</p>
+    </div>
+
+    <!-- Website Pricing -->
+    <div class="pricing-block reveal">
+      <h2>Website Development</h2>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <span class="tier">STARTER</span>
+          <h3>1–3 Pages</h3>
+          <p>Home • About • Contact / Services</p>
+          <div class="price">₹999 – ₹1,999</div>
+        </div>
+
+        <div class="price-card highlight">
+          <span class="tier">STANDARD</span>
+          <h3>4–5 Pages</h3>
+          <p>Home • Services • Gallery / Offers</p>
+          <div class="price">₹2,999 – ₹4,999</div>
+        </div>
+
+        <div class="price-card">
+          <span class="tier">ADVANCED</span>
+          <h3>6–9 Pages</h3>
+          <p>SEO Optimized • Showcase</p>
+          <div class="price">₹5,999 – ₹8,999</div>
+        </div>
+      </div>
+
+      <div class="pricing-features">
+        <span>✔ Mobile Friendly</span>
+        <span>✔ WhatsApp & Call</span>
+        <span>✔ Google Map</span>
+        <span>✔ SSL Security 🔒</span>
+        <span>✔ Fast Loading ⚡</span>
+      </div>
+    </div>
+
+    <!-- ✅ Digital Pricing (NOT MISSED) -->
+    <div class="pricing-block reveal">
+      <h2>GMB & Digital Marketing</h2>
+
+      <div class="pricing-table">
+        <div class="pricing-row head">
+          <span>Service</span>
+          <span>Basic</span>
+          <span>Standard</span>
+          <span>Advanced</span>
+        </div>
+
+        <div class="pricing-row">
+          <span>GMB Setup</span>
+          <span>₹499</span>
+          <span>₹799</span>
+          <span>₹1,399</span>
+        </div>
+
+        <div class="pricing-row">
+          <span>Mobile Verification</span>
+          <span>₹1,299</span>
+          <span>❌</span>
+          <span>❌</span>
+        </div>
+
+        <div class="pricing-row">
+          <span>Profile Update</span>
+          <span>₹499</span>
+          <span>₹999</span>
+          <span>₹999</span>
+        </div>
+
+        <div class="pricing-row">
+          <span>Ad Campaign Setup</span>
+          <span>❌</span>
+          <span>❌</span>
+          <span>₹1,399</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Monthly Plan -->
+    <div class="pricing-cta reveal">
+      <span class="badge">⭐ Best Value</span>
+      <h3>Complete Growth Package</h3>
+      <p>
+        ✔ Meta + Google Ads<br>
+        ✔ Full GMB Optimization<br>
+        ✔ 12 Social Creatives / Month
+      </p>
+      <div class="price">₹9,999 / month</div>
+      <small>Ad Budget: ₹300 – ₹500/day (separate)</small>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+      }
+    });
+  },{threshold:.2});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+
+
+
+<!-- ===============================
+     ULTRA PREMIUM FOOTER
+================================ -->
+<footer class="premium-footer">
+  <div class="footer-glow"></div>
+
+  <div class="footer-wrap">
+
+    <!-- LEFT : BRAND -->
+    <div class="footer-brand">
+      <div class="brand-badge">V</div>
+      <h3>Veloni Digital</h3>
+      <p>
+        Premium Web Studio & Smart e-Service hub delivering
+        technology, visibility, and trusted government services
+        for local businesses and individuals.
+      </p>
+
+      <div class="footer-actions">
+        <a href="tel:6381918347"><i class="ri-phone-line"></i></a>
+        <a href="https://wa.me/916381918347" target="_blank"><i class="ri-whatsapp-line"></i></a>
+        <a href="mailto:velonidigital@gmail.com"><i class="ri-mail-line"></i></a>
+      </div>
+    </div>
+
+    <!-- CENTER : OFFICE -->
+    <div class="footer-office">
+      <h4>Office & Support</h4>
+
+      <div class="office-item">
+        <i class="ri-map-pin-line"></i>
+        <span>Tiruppur, Tamil Nadu</span>
+      </div>
+
+      <div class="office-item">
+        <i class="ri-time-line"></i>
+        <span>Mon – Sun : 7:00 AM – 9:00 PM</span>
+      </div>
+
+      <div class="office-item">
+        <i class="ri-phone-line"></i>
+        <a href="tel:6381918347" style="color:inherit;font-weight:600"> +91 63 8191 8347          
+        </a>
+      </div>
+
+      <a href="https://maps.app.goo.gl/Pd7s9erAxGDrGN939"
+      class="direction-btn"
+      onclick="openMaps(event)">
+      Get Directions</a>
+    </div>
+
+    <!-- RIGHT : MAP -->
+    <div class="footer-map-box">
+      <iframe
+        src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.5856979612695!2d77.35709527575612!3d11.0696562890975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9a941c8c57965%3A0xa81d068f619462b9!2sVeloni%20Digital%20-%20Premium%20Web%20Studio%20%7C%20Smart%20eService!5e0!3m2!1sen!2sin!4v1765609378672!5m2!1sen!2sin "
+        loading="lazy">
+      </iframe>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <span>© 2025 Veloni Digital</span>
+    <span>Premium Web Studio • Smart e-Service</span>
+  </div>
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>
