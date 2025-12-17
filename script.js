@@ -134,6 +134,38 @@ window.addEventListener('click', (e) => {
 
 
 
+/* ===============================
+   GMB AUTO POPUP — FIXED VERSION
+================================ */
+
+const gmbPopup = document.getElementById("gmbPopup");
+
+// RESET FOR TESTING (remove later if you want)
+// sessionStorage.removeItem("gmbPopupShown");
+
+function showGmbPopup() {
+  if (!sessionStorage.getItem("gmbPopupShown")) {
+    gmbPopup.style.display = "flex";
+    sessionStorage.setItem("gmbPopupShown", "true");
+  }
+}
+
+function closeGmbPopup() {
+  gmbPopup.style.display = "none";
+}
+
+/* 🔥 SCROLL TRIGGER (SAFE) */
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 500) {   // ⬅ triggers after 500px scroll
+    showGmbPopup();
+  }
+});
+
+/* 🔥 BACKUP TIMER (IN CASE NO SCROLL) */
+setTimeout(() => {
+  showGmbPopup();
+}, 5000); // 5 seconds
+
 
 
 

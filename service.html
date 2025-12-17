@@ -233,7 +233,7 @@ a{text-decoration:none;color:inherit}
             <li>Social Media Management</li>
             <li>Meta Ads & Google Ads Setup</li>
           </ul>
-          <a href="#" class="book-btn" onclick="openBooking('Tech Services')">Book Now</a>
+          <a href="pricing.html" class="book-btn" onclick="openBooking('Tech Services')">Book Now</a>
         </div>
       </div>
 
@@ -252,7 +252,9 @@ a{text-decoration:none;color:inherit}
             <li>Udyam / MSME Registration</li>
             <li>Bank & Fastag KYC Update & Recharge</li>
           </ul>
-          <a href="#" class="book-btn" onclick="openBooking('Digital Services')">Book Now</a>
+
+            <a href="#" class="book-btn" onclick="openBooking('Digital Services'); return false;"> Book Now </a>
+ 
         </div>
       </div>
 
@@ -269,7 +271,9 @@ a{text-decoration:none;color:inherit}
             <li>Resume Creation</li>
             <li>School / College Projects</li>
           </ul>
-          <a href="#" class="book-btn" onclick="openBooking('Document Work')">Book Now</a>
+        
+          <a href="#" class="book-btn" onclick="openBooking('Document Work'); return false;"> Book Now </a>
+        
         </div>
       </div>
 
@@ -290,7 +294,9 @@ a{text-decoration:none;color:inherit}
             <li>TN Labor Registration</li>
             <li>Family Card Services</li>
           </ul>
-          <a href="#" class="book-btn" onclick="openBooking('Govt Services')">Book Now</a>
+
+          <a href="#" class="book-btn" onclick="openBooking('Govt Services'); return false;"> Book Now </a>
+
         </div>
       </div>
 
@@ -300,41 +306,18 @@ a{text-decoration:none;color:inherit}
 
 
 
-<!-- BOOKING POPUP -->
-<div id="contactBubble" class="popup-overlay">
-  <div class="popup-card">
-    
-    <button class="popup-close" onclick="closeBooking()">×</button>
-
-    <h3 class="popup-title">Book a Service</h3>
-    <p class="popup-subtitle">Tell us what you need, we’ll take care of it.</p>
-
-    <form class="popup-form">
-      <input type="text" id="serviceInput" readonly>
-
-      <input type="text" placeholder="Your Name" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <textarea placeholder="Your Requirement"></textarea>
-
-      <button type="submit" class="popup-btn">Submit Request</button>
-    </form>
-
-  </div>
-</div>
-
-
-
 
 
 <script>
 /* =====================
    ACCORDION LOGIC
 ===================== */
-const items = document.querySelectorAll('.accordion-item');
+document.querySelectorAll('.accordion-item').forEach(item => {
+  const header = item.querySelector('.accordion-header');
+  if (!header) return;
 
-items.forEach(item => {
-  item.querySelector('.accordion-header').addEventListener('click', () => {
-    items.forEach(i => {
+  header.addEventListener('click', () => {
+    document.querySelectorAll('.accordion-item').forEach(i => {
       if (i !== item) i.classList.remove('active');
     });
     item.classList.toggle('active');
@@ -342,7 +325,7 @@ items.forEach(item => {
 });
 
 /* =====================
-   BOOKING POPUP LOGIC
+   BOOKING POPUP
 ===================== */
 function openBooking(service) {
   document.getElementById('serviceInput').value = service;
@@ -352,10 +335,76 @@ function openBooking(service) {
 function closeBooking() {
   document.getElementById('contactBubble').classList.remove('active');
 }
+
+/* =====================
+   WHATSAPP SUBMIT
+===================== */
+function sendBookingToWhatsApp(e) {
+  e.preventDefault();
+
+  const service = document.getElementById("serviceInput").value;
+  const name = document.getElementById("userName").value.trim();
+  const phone = document.getElementById("userPhone").value.trim();
+  const requirement = document.getElementById("userRequirement").value.trim();
+
+  const message =
+`Hi Veloni Digital!
+I would like to book a service.
+
+Service: ${service}
+Name: ${name}
+Phone: ${phone}
+Requirement: ${requirement || "Not specified"}
+
+Please guide me further.`;
+
+  const encodedMessage = encodeURIComponent(message);
+
+  window.open(
+    "https://wa.me/916381918347?text=" + encodedMessage,
+    "_blank"
+  );
+
+  closeBooking();
+}
 </script>
 
 
-  
+
+
+
+
+
+<!-- BOOKING POPUP -->
+<div id="contactBubble" class="popup-overlay">
+  <div class="popup-card">
+
+    <button class="popup-close" onclick="closeBooking()">×</button>
+
+    <h3 class="popup-title">Book a Service</h3>
+    <p class="popup-subtitle">Tell us what you need, we’ll take care of it.</p>
+
+    <form class="popup-form" onsubmit="sendBookingToWhatsApp(event)">
+
+      <input type="text" id="serviceInput" readonly>
+
+      <input type="text" id="userName" placeholder="Your Name" required>
+
+      <input type="tel" id="userPhone" placeholder="Phone Number" required>
+
+      <textarea id="userRequirement" placeholder="Your Requirement"></textarea>
+
+      <button type="submit" class="popup-btn">
+        Submit Request
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
+
+
 
 
 
