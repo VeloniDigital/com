@@ -164,7 +164,7 @@ window.addEventListener("scroll", () => {
 /* 🔥 BACKUP TIMER (IN CASE NO SCROLL) */
 setTimeout(() => {
   showGmbPopup();
-}, 5000); // 5 seconds
+}, 4000); // 4 seconds
 
 
 
