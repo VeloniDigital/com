@@ -131,6 +131,11 @@ window.addEventListener('click', (e) => {
 
 
 
+
+
+
+
+
 /* ===============================
    GMB AUTO POPUP — ALWAYS OPEN
 ================================ */
@@ -156,5 +161,9 @@ window.addEventListener("scroll", () => {
 window.addEventListener("load", () => {
   setTimeout(() => {
     showGmbPopup();
-  }, 4000); // opens every refresh
+  }, 12000); // opens every refresh
 });
+
+
+
+

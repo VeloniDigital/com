@@ -35,16 +35,16 @@
 
 <header>
   <a href="index.html" class="brand-link">
-  <div class="brand">
-    <div class="logo">V</div>
-    <div>
-      <div style="font-size:18px;color:#fff var(--muted)">Veloni Digital</div>
-      <div class="kicker">
-        The Premium Web Studio <span class="separator">• Smart e-Services</span>
+    <div class="brand">
+      <div class="logo">V</div>
+      <div>
+        <div style="font-size:18px;color:#fff;">Veloni Digital</div>
+        <div class="kicker">
+          The Premium Web Studio <span class="separator">• Smart e-Services</span>
+        </div>
       </div>
     </div>
-  </div>
-</a>
+  </a>
 
   <nav>
     <a href="service.html" target="_blank">Services</a>
@@ -62,67 +62,80 @@
 <main class="container">
   <div class="orb one" aria-hidden></div>
   <div class="orb two" aria-hidden></div>
-<!-- HERO -->
-<section class="hero">
 
-  <!-- LEFT CONTENT -->
+  <!-- HERO -->
+  <section class="hero">
 
-  <div class="hero-content">
-    <div class="hero-card">
-  <div class="tagline-badge">
-    <i class="ri-flashlight-fill"></i>
-    <span>A Complete Website. Delivered in 1 Day.</span>
-  </div>
-</div>
+    <!-- LEFT CONTENT -->
+    <div class="hero-content">
 
+      <div class="hero-card">
+        <div class="tagline-badge" id="oneDayWebsiteBtn">
+          <i class="ri-flashlight-fill"></i>
+          <span>A Complete Website. Delivered in 1 Day.</span>
+        </div>
+      </div>
 
-    <h2>Futuristic Digital Products. Built for speed, privacy & scale.</h2>
+      
+        <h2>Looking For a Website?</h2>
 
-    <p class="lead">
-      Veloni Digital provides fast and reliable website development, local e-services, printing, e-Sevai support, 
-      and digital marketing solutions for all from one trusted service center with modern design and quick delivery.
-    </p>
+        <p class="lead">
+          Veloni Digital offers fast, reliable website development, e-Sevai support,
+          printing, and digital marketing all from one trusted service center with
+          modern design and quick delivery.
+        </p>
 
-    <div class="hero-actions">
+        <div class="hero-actions">
+          <a class="cta cta-explore" href="service.html" target="_blank" rel="noopener">
+            <span class="cta-text">Explore Services</span>
+            <span class="cta-sub">See what we can do for you →</span>
+          </a>
 
-      <a class="cta cta-explore" href="service.html" target="_blank" rel="noopener">
-          <span class="cta-text">Explore Services</span>
-          <span class="cta-sub">See what we can do for you →</span>
-        </a>
+          <a style="color:var(--muted);font-weight:700" href="pricing.html">
+            View Pricing
+          </a>
+        </div>
 
+        <div class="glass-stats" aria-hidden="true">
+          <div class="stat">
+            <strong>0%</strong>
+            <span>Template Usage</span>
+          </div>
 
-       <a style="color:var(--muted);font-weight:700" href="pricing.html">View Pricing</a>
+          <div class="stat">
+           <strong class="count" data-target="100">100%</strong>
+            <span>Mobile Friendly</span>
+          </div>
+
+          <div class="stat">
+            <strong class="stat">Book now</strong>
+            <span>Mobile Friendly</span>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-<div class="glass-stats" aria-hidden="true">
-  <div class="stat"><strong>0%</strong><span>Template Usage</span></div>
-  <div class="stat"><strong>SEO</strong><span>Optimized Build</span></div>
-  <div class="stat">
-    <strong class="count" data-target="100">0%</strong>
-    <span>Mobile Friendly</span>
-</div>
+    <!-- RIGHT CONTENT -->
+    <div class="hero-art">
 
-</div>
+      <script type="module"
+        src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js">
+      </script>
+
+      <dotlottie-wc 
+        src="https://lottie.host/4eabf346-1385-4463-b0a3-d3a3618bf1a1/4fi9Qiv4Bx.lottie"
+        style="width:100%; max-width:400px; height:350px; margin:auto;"
+        autoplay
+        loop>
+      </dotlottie-wc>
+
+    </div>
+
+  </section>
+</main>
 
 
-  </div>
-
-<div class="hero-art">
-
-  <!-- DotLottie Web Component -->
-<script type="module" src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js"></script>
-
-<!-- Hero Animation -->
-<div class="hero-art" style="width:100%; max-width:400px; margin:auto;">
-  <dotlottie-wc 
-      src="https://lottie.host/4eabf346-1385-4463-b0a3-d3a3618bf1a1/4fi9Qiv4Bx.lottie" 
-      style="width:100%; height:350px;" 
-      autoplay 
-      loop>
-  </dotlottie-wc>
-</div>
-
-</section>
 
 
 
@@ -437,12 +450,33 @@
 
 
 
+
+
+
+
+
 <!-- Contact Bubble Popup -->
 <div id="contactBubble" class="bubble">
   <a href="tel:+916381918347" title="Call"><i class="fas fa-phone"></i></a>
-  <a href="https://wa.me/916381918347" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a id="whatsappLink" href="https://wa.me/916381918347" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <a href="mailto:velonidigital@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
 </div>
+
+<script>
+  // Pre-filled WhatsApp message for 1 Day Website
+  const oneDayWebsiteBtn = document.getElementById('oneDayWebsiteBtn');
+  const whatsappLink = document.getElementById('whatsappLink');
+
+  oneDayWebsiteBtn.addEventListener('click', () => {
+    const message = encodeURIComponent("Hi! I am interested in your 1 Day Website service. Please provide more details.");
+    const phoneNumber = "916381918347"; // Your WhatsApp number
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    // Open WhatsApp link in a new tab
+    window.open(url, "_blank");
+  });
+</script>
+
 
 
 
@@ -497,12 +531,6 @@
 
   </div>
 </div>
-
-
-
-
-
-
 
 
 
