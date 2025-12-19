@@ -92,43 +92,6 @@ modal.addEventListener('click', e => {
 
 
 
-// Bubble element
-const contactBubble = document.getElementById('contactBubble');
-
-// Collect all elements that should trigger the bubble
-const triggers = [
-  document.querySelector('#contactBtn'),
-  document.querySelector('#service-contact'),
-  document.querySelector('.tagline-badge')
-].filter(el => el !== null);
-
-// Toggle bubble on click
-triggers.forEach(trigger => {
-  trigger.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (contactBubble) {
-      contactBubble.classList.toggle('show');
-    }
-
-    // Scroll to contact section if exists
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-
-// Hide bubble when clicking outside
-window.addEventListener('click', (e) => {
-  if (contactBubble && !contactBubble.contains(e.target) && !triggers.some(t => t.contains(e.target))) {
-    contactBubble.classList.remove('show');
-  }
-});
-
-
-
-
-
 
 
 
@@ -167,3 +130,18 @@ window.addEventListener("load", () => {
 
 
 
+
+
+
+  // Pre-filled WhatsApp message for 1 Day Website
+  const oneDayWebsiteBtn = document.getElementById('oneDayWebsiteBtn');
+  const whatsappLink = document.getElementById('whatsappLink');
+
+  oneDayWebsiteBtn.addEventListener('click', () => {
+    const message = encodeURIComponent("Hi Veloni! I am interested in your 1 Day Website service. Please provide more details.");
+    const phoneNumber = "916381918347"; // Your WhatsApp number
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    // Open WhatsApp link in a new tab
+    window.open(url, "_blank");
+  });
