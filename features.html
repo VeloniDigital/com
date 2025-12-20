@@ -1,0 +1,673 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title> Features | Veloni Digital - Premium Web Studio | Smart e-Service</title>
+  <meta name="description" content="Veloni Digital — futuristic web & app builds, smart eServices and e-governance support. Fully responsive, high-performance designs." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="badge.png" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PAGE STYLES -->
+ 
+ 
+ <style>
+    :root{
+      --bg:#020617;
+      --panel:#020617;
+      --border:#1f2937;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#38bdf8;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter,system-ui;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    /* =====================
+       ELITE PRICING SECTION
+    ===================== */
+    .elite-pricing{
+      position:relative;
+      padding:140px 20px;
+      overflow:hidden;
+    }
+
+    .elite-pricing::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(700px 250px at 10% 10%, rgba(56,189,248,.08), transparent 45%),
+        radial-gradient(600px 200px at 90% 20%, rgba(14,165,233,.06), transparent 50%);
+      animation:floatGlow 12s ease-in-out infinite alternate;
+      pointer-events:none;
+    }
+
+    @keyframes floatGlow{
+      from{transform:translateY(0)}
+      to{transform:translateY(-40px)}
+    }
+
+    .pricing-container{
+      max-width:1100px;
+      margin:auto;
+      position:relative;
+    }
+
+    .pricing-head{
+      text-align:center;
+      margin-bottom:80px;
+    }
+
+    .pricing-kicker{
+      font-size:13px;
+      letter-spacing:2px;
+      color:var(--accent);
+    }
+
+    .pricing-head h1{
+      font-size:40px;
+      margin:14px 0;
+    }
+
+    .pricing-head h1 span{color:var(--accent)}
+
+    .pricing-head p{
+      color:var(--muted);
+      max-width:640px;
+      margin:auto;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(40px) scale(.96);
+      transition:all .9s cubic-bezier(.16,1,.3,1);
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+    .pricing-block{
+      margin-bottom:90px;
+    }
+
+    .pricing-block h2{
+      font-size:26px;
+      margin-bottom:30px;
+    }
+
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:26px;
+    }
+
+    .price-card{
+      position:relative;
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:34px;
+      transition:.5s cubic-bezier(.16,1,.3,1);
+    }
+
+    .price-card::after{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:linear-gradient(120deg,transparent 40%,rgba(56,189,248,.35),transparent 60%);
+      opacity:0;
+      transition:.6s;
+    }
+
+    .price-card:hover::after{opacity:1}
+
+    .price-card:hover{
+      transform:translateY(-12px) scale(1.02);
+      box-shadow:
+        0 30px 70px rgba(2,6,23,.85),
+        0 0 0 1px rgba(56,189,248,.35);
+    }
+
+    .tier{
+      color:var(--accent);
+      font-size:13px;
+      letter-spacing:1px;
+    }
+
+    .price{
+      margin-top:18px;
+      font-size:24px;
+      font-weight:800;
+    }
+
+    .highlight{
+      box-shadow:0 0 0 1px var(--accent);
+    }
+
+    .pricing-features{
+      margin-top:26px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    /* DIGITAL PRICING TABLE */
+    .pricing-table{
+      border:1px solid var(--border);
+      border-radius:18px;
+      overflow:hidden;
+    }
+
+    .pricing-row{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      padding:18px 22px;
+      border-bottom:1px solid var(--border);
+      transition:.3s;
+    }
+
+    .pricing-row.head{
+      background:#020617;
+      font-weight:600;
+    }
+
+    .pricing-row:hover{
+      background:linear-gradient(90deg,transparent,rgba(56,189,248,.06),transparent);
+    }
+
+    .pricing-row:last-child{border-bottom:none}
+
+    /* CTA */
+    .pricing-cta{
+      text-align:center;
+      background:#020617;
+      border:1px solid var(--accent);
+      border-radius:26px;
+      padding:60px 30px;
+      position:relative;
+    }
+
+    .pricing-cta::after{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      border-radius:inherit;
+      background:linear-gradient(90deg,#38bdf8,#0ea5e9,#38bdf8);
+      filter:blur(20px);
+      opacity:.25;
+      animation:pulse 3s infinite;
+      z-index:-1;
+    }
+
+    @keyframes pulse{
+      0%,100%{opacity:.25}
+      50%{opacity:.55}
+    }
+
+    @media(max-width:600px){
+      .pricing-row{grid-template-columns:1.5fr 1fr 1fr 1fr;font-size:13px}
+      .pricing-head h1{font-size:32px}
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <a href="index.html" class="brand-link">
+    <div class="brand">
+      <div class="logo">V</div>
+      <div>
+        <div style="font-size:18px;color:#fff;">Veloni Digital</div>
+        <div class="kicker">The Premium Web Studio • Smart e-Services</div>
+      </div>
+    </div>
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="service.html" class="active">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="index.html">Contact</a>
+    <a class="cta" href="index.html">Start Project</a>
+  </nav>
+</header>
+
+
+
+<section class="elite-page-opener">
+
+  <div class="opener-inner">
+
+    <h1>
+      <span>
+        Your Website Creates<br>
+        Your First Digital Impression
+      </span>
+    </h1>
+
+    <p>
+      Before customers call you, visit you, or trust you.
+      They judge your business by your website.
+      <br><br>
+      That’s why successful brands invest in websites
+      for <strong>credibility, visibility, and long-term growth.</strong>
+    </p>
+
+    <div class="opener-divider"></div>
+
+    <small>
+      Scroll to see why your website matters more than you think →
+    </small>
+
+  </div>
+
+</section>
+
+<style>
+.elite-page-opener {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #121216, #070709);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 120px;
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.opener-inner {
+  max-width: 900px;
+}
+
+.elite-page-opener h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.12;
+  margin-bottom: 26px;
+  letter-spacing: -0.5px;
+}
+
+.elite-page-opener p {
+  font-size: 18px;
+  color: #b8b8b8;
+  margin-bottom: 38px;
+}
+
+.elite-page-opener p strong {
+  color: #f5d77a;
+  font-weight: 600;
+}
+
+.opener-divider {
+  width: 90px;
+  height: 3px;
+  margin: 0 auto 22px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.elite-page-opener small {
+  color: #8a8a8a;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .elite-page-opener {
+    padding: 0 24px;
+  }
+
+  .elite-page-opener h1 {
+    font-size: 32px;
+  }
+
+  .elite-page-opener p {
+    font-size: 16px;
+  }
+}
+</style>
+
+
+
+
+<section class="lux-web-story">
+
+  <!-- INTRO -->
+  <div class="lux-intro">
+    <span class="lux-label">Your Website Is Not Just a Page</span>
+    <h2>Your Most Powerful Digital Asset</h2>
+    <p>
+      In today’s world, customers don’t walk in blindly.
+      They search, compare, and judge! All before making contact.
+    </p>
+  </div>
+
+  <!-- JOURNEY -->
+  <div class="lux-journey">
+
+    <div class="lux-card">
+      <span class="lux-icon">🌍</span>
+      <h4>The Digital World</h4>
+      <p>
+        Millions of people searching online every day,
+        looking for businesses they can trust.
+      </p>
+    </div>
+
+    <div class="lux-line"></div>
+
+    <div class="lux-card">
+      <span class="lux-icon">🏪</span>
+      <h4>Your Business</h4>
+      <p>
+        You offer quality, service, and real value
+        but only if people discover you.
+      </p>
+    </div>
+
+    <div class="lux-line"></div>
+
+    <div class="lux-card featured">
+      <span class="lux-icon">🌐</span>
+      <h4>Your Website</h4>
+      <p>
+        A professional digital showroom that builds trust,
+        explains your value, and works 24/7.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- STATEMENT -->
+  <div class="lux-statement">
+    <p>
+      Without a website, customers may know your name.<br>
+      <strong>But they won’t feel confident enough to choose your Brand.</strong>
+    </p>
+  </div>
+
+  <!-- COMPARISON -->
+  <div class="lux-compare">
+
+    <div class="lux-box dark">
+      <h5>Without a Website</h5>
+      <ul>
+        <li>Weak first impression</li>
+        <li>Low customer confidence</li>
+        <li>Missed enquiries & calls</li>
+        <li>Competitors look more reliable</li>
+      </ul>
+    </div>
+
+    <div class="lux-box gold">
+      <h5>With a Professional Website</h5>
+      <ul>
+        <li>Strong premium brand image</li>
+        <li>Instant trust & credibility</li>
+        <li>More leads & conversions</li>
+        <li>Faster and consistent growth</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- END -->
+  <div class="lux-end">
+    <h3>Your Website Works While You Rest</h3>
+    <p>
+      Even when your business is closed,
+      your website continues building trust,
+      attracting customers, and generating opportunities.
+    </p>
+  </div>
+
+</section>
+
+<style>
+.lux-web-story {
+  background: #0b0b0e;
+  color: #fff;
+  padding: 140px 20px;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+.lux-label {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d4af37, #f5d77a);
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.lux-intro h2 {
+  font-size: 44px;
+  margin: 22px 0;
+  line-height: 1.2;
+}
+
+.lux-intro p {
+  color: #aaa;
+  font-size: 18px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lux-journey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+  margin: 80px 0;
+  flex-wrap: wrap;
+}
+
+.lux-card {
+  background: rgba(255,255,255,0.05);
+  padding: 34px;
+  border-radius: 22px;
+  width: 270px;
+  backdrop-filter: blur(12px);
+}
+
+.lux-card h4 {
+  margin: 16px 0 10px;
+}
+
+.lux-card p {
+  color: #bbb;
+  font-size: 15px;
+}
+
+.lux-card.featured {
+  border: 1px solid #d4af37;
+  box-shadow: 0 0 45px rgba(212,175,55,0.25);
+}
+
+.lux-icon {
+  font-size: 38px;
+}
+
+.lux-line {
+  width: 70px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.lux-statement {
+  font-size: 22px;
+  margin: 60px 0;
+}
+
+.lux-statement strong {
+  color: #f5d77a;
+}
+
+.lux-compare {
+  display: flex;
+  justify-content: center;
+  gap: 42px;
+  flex-wrap: wrap;
+}
+
+.lux-box {
+  width: 340px;
+  padding: 34px;
+  border-radius: 22px;
+  text-align: left;
+}
+
+.lux-box h5 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.lux-box ul {
+  padding-left: 18px;
+  color: #ddd;
+}
+
+.lux-box.dark {
+  background: rgba(255,255,255,0.04);
+}
+
+.lux-box.gold {
+  background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+  border: 1px solid #d4af37;
+}
+
+.lux-end {
+  margin-top: 90px;
+}
+
+.lux-end h3 {
+  font-size: 32px;
+}
+
+.lux-end p {
+  color: #aaa;
+  max-width: 640px;
+  margin: 12px auto 0;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ===============================
+     ULTRA PREMIUM FOOTER
+================================ -->
+<footer class="premium-footer">
+  <div class="footer-glow"></div>
+
+  <div class="footer-wrap">
+
+    <!-- LEFT : BRAND -->
+    <div class="footer-brand">
+      <div class="brand-badge">V</div>
+      <h3>Veloni Digital</h3>
+      <p>
+        Premium Web Studio & Smart e-Service hub delivering
+        technology, visibility, and trusted government services
+        for local businesses and individuals.
+      </p>
+
+      <div class="footer-actions">
+        <a href="tel:6381918347"><i class="ri-phone-line"></i></a>
+        <a href="https://wa.me/916381918347" target="_blank"><i class="ri-whatsapp-line"></i></a>
+        <a href="mailto:velonidigital@gmail.com"><i class="ri-mail-line"></i></a>
+      </div>
+    </div>
+
+    <!-- CENTER : OFFICE -->
+    <div class="footer-office">
+      <h4>Office & Support</h4>
+
+      <div class="office-item">
+        <i class="ri-map-pin-line"></i>
+        <span>Tiruppur, Tamil Nadu</span>
+      </div>
+
+      <div class="office-item">
+        <i class="ri-time-line"></i>
+        <span>Mon – Sun : 7:00 AM – 9:00 PM</span>
+      </div>
+
+      <div class="office-item">
+        <i class="ri-phone-line"></i>
+        <a href="tel:6381918347" style="color:inherit;font-weight:600"> +91 63 8191 8347          
+        </a>
+      </div>
+
+      <a href="https://maps.app.goo.gl/Pd7s9erAxGDrGN939"
+      class="direction-btn"
+      onclick="openMaps(event)">
+      Get Directions</a>
+    </div>
+
+    <!-- RIGHT : MAP -->
+    <div class="footer-map-box">
+      <iframe
+        src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.5856979612695!2d77.35709527575612!3d11.0696562890975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9a941c8c57965%3A0xa81d068f619462b9!2sVeloni%20Digital%20-%20Premium%20Web%20Studio%20%7C%20Smart%20eService!5e0!3m2!1sen!2sin!4v1765609378672!5m2!1sen!2sin "
+        loading="lazy">
+      </iframe>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <span>© 2025 Veloni Digital</span>
+    <span>Premium Web Studio • Smart e-Service</span>
+  </div>
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>

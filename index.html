@@ -48,9 +48,12 @@
 
   <nav>
     <a href="service.html" target="_blank">Services</a>
-    <a href="#features">Features</a>
+    <a href="features.html" class="features-btn"> Features </a>
+    
     <a href="pricing.html">Pricing</a>
-    <a href="#" id="contactBtn" class="contact-link">Contact</a>
+    <a href="#contact" class="nav-link">Contact</a>
+
+
     <a class="cta" href="pricing.html">Start Project</a>
   </nav>
 
@@ -65,51 +68,59 @@
 
   <!-- HERO -->
   <section class="hero">
+<!-- LEFT CONTENT -->
+<div class="hero-content">
 
-    <!-- LEFT CONTENT -->
-    <div class="hero-content">
-
-      <div class="hero-card">
-        <div class="tagline-badge" id="oneDayWebsiteBtn">
-          <i class="ri-flashlight-fill"></i>
-          <span>A Complete Website. Delivered in 1 Day.</span>
-        </div>
-      </div>
-
-      
-        <h2>Looking For a Website?</h2>
-
-        <p class="lead">
-          Veloni Digital offers fast, reliable website development, digital marketing,
-         and e-Sevai support like all from one trusted service center with
-          modern design and quick delivery.
-        </p>
-
-        <div class="hero-actions">
-          <a class="cta cta-explore" href="service.html" target="_blank" rel="noopener">
-            <span class="cta-text">Explore Services</span>
-            <span class="cta-sub">See what we can do for you →</span>
-          </a>
-
-          <a style="color:var(--muted);font-weight:700" href="pricing.html">
-            View Pricing
-          </a>
-        </div>
-
-        <div class="glass-stats" aria-hidden="true">
-          <div class="stat">
-            <strong>0%</strong>
-            <span>Template Usage</span>
-          </div>
-
-          <div class="stat">
-           <strong class="count" data-target="100">100%</strong>
-            <span>Mobile Friendly</span>
-          </div>
-
-
-      </div>
+  <!-- HERO CARD -->
+  <div class="hero-card">
+    <div class="tagline-badge" id="oneDayWebsiteBtn">
+      <i class="ri-flashlight-fill"></i>
+      <span>A Complete Website. Delivered in 1 Day.</span>
     </div>
+  </div>
+
+  <!-- HEADING -->
+  <h2>Looking For a Website?</h2>
+
+  <!-- DESCRIPTION -->
+  <p class="lead">
+    Veloni Digital offers fast, reliable website development, digital marketing,
+    and e-Sevai support — all from one trusted service center with
+    modern design and quick delivery.
+  </p>
+
+  <!-- ACTION BUTTONS -->
+  <div class="hero-actions">
+    <a class="cta cta-explore" href="service.html" target="_blank" rel="noopener">
+      <span class="cta-text">Explore Services</span>
+      <span class="cta-sub">See what we can help for you →</span>
+    </a>
+
+    <a class="hero-link" href="pricing.html">
+      View Pricing
+    </a>
+  </div>
+
+  <!-- STATS -->
+  <div class="glass-stats" aria-hidden="true">
+    <div class="stat">
+      <strong>0%</strong>
+      <span>Template Usage</span>
+    </div>
+
+    <div class="stat">
+      <strong class="count" data-target="100">100%</strong>
+      <span>Mobile Friendly</span>
+    </div>
+  </div>
+
+  <!-- HERO QUESTION TRIGGER -->
+  <a href="features.html" class="hero-question">
+    <span class="question-text">Hmm.... Website is important?</span>
+    <span class="question-action">Let’s Understand →</span>
+  </a>
+
+</div>
 
     <!-- RIGHT CONTENT -->
     <div class="hero-art">
@@ -253,13 +264,10 @@
 
 
 
-
-
-
 <!-- ===============================
      CONVERSION CTA SECTION
 ================================ -->
-<section class="cta-section">
+<section class="cta-section" id="contact">
   <div class="cta-container">
 
     <div class="cta-content">
@@ -277,19 +285,22 @@
       
       <div class="cta-actions">
         <a href="https://wa.me/916381918347?text=Hi%20Veloni%20Digital%2C%20I%20am%20interested%20in%20your%20services.%20Please%20guide%20me."
-        target="_blank"
-        rel="noopener"
-        class="btn primary">
-        <i class="ri-whatsapp-line"></i> WhatsApp Now 
-      </a>
+           target="_blank"
+           rel="noopener"
+           class="btn primary">
+          <i class="ri-whatsapp-line"></i> WhatsApp Now 
+        </a>
+
         <a href="tel:6381918347" class="btn secondary">
           <i class="ri-phone-line"></i> Call Veloni
         </a>
+
         <a href="https://maps.app.goo.gl/Pd7s9erAxGDrGN939"
            target="_blank"
            rel="noopener"
-           class="btn outline"> Visit Office
-          </a>
+           class="btn outline">
+          Visit Office
+        </a>
       </div>
 
       <div class="cta-trust">
@@ -301,10 +312,6 @@
 
   </div>
 </section>
-
-
-
-
 
 
 
@@ -379,34 +386,6 @@
 
 
 
-
-
-
-
-
-<!-- START PROJECT MODAL -->
-<div class="modal-overlay" id="projectModal">
-  <div class="modal">
-    <h3>Start Your Project</h3>
-    <p>Select the service you’re interested in</p>
-
-    <select id="serviceSelect">
-      <option value="">Select a Service</option>
-      <option>Tech Services</option>
-      <option>Digital Services</option>
-      <option>Document Work</option>
-      <option>Govt Services</option>
-    </select>
-
-    <div class="modal-actions">
-      <button class="btn-secondary" id="closeModal">Cancel</button>
-      <button class="btn-primary" id="sendWhatsApp">Continue to WhatsApp</button>
-    </div>
-  </div>
-</div>
-
-
-
 <script>
   function openMaps(e) {
     e.preventDefault();
@@ -423,14 +402,11 @@
 
 
 
-
-
-
-
 <!-- ===============================
-     AUTO POPUP : GOOGLE MAP VERIFICATION
+     GMB AUTO POPUP : GOOGLE MAP VERIFICATION
 ================================ -->
 <div id="gmbPopup" class="gmb-popup-overlay">
+
   <div class="gmb-popup">
 
     <button class="gmb-close" onclick="closeGmbPopup()">×</button>
@@ -438,8 +414,7 @@
     <span class="gmb-badge">🔥 MOST DEMANDED</span>
 
     <h3>
-      Google Map <span>Mobile<br>
-      Number</span> Verification
+      Google Map <span>Mobile<br>Number</span> Verification
     </h3>
 
     <p>
@@ -460,7 +435,7 @@
     <a href="https://wa.me/916381918347?text=Hi%20Veloni%20Digital%2C%20I%20want%20Google%20Map%20Mobile%20Number%20Verification%20service%20for%20₹1299."
        target="_blank"
        class="btn primary gmb-btn">
-       <i class="ri-whatsapp-line"></i> Get Verified Now
+      <i class="ri-whatsapp-line"></i> Get Verified Now
     </a>
 
     <small class="gmb-note">
@@ -472,11 +447,33 @@
 
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  const gmbPopup = document.getElementById("gmbPopup");
 
+  function showGmbPopup() {
+    gmbPopup.style.display = "flex";
+    document.body.classList.add("popup-open");
+  }
 
+  window.closeGmbPopup = function () {
+    gmbPopup.style.display = "none";
+    document.body.classList.remove("popup-open");
+  };
 
+  /* AUTO OPEN AFTER PAGE LOAD */
+  setTimeout(showGmbPopup, 8000);
 
+  /* OPEN ON SCROLL */
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+      showGmbPopup();
+    }
+  });
+
+});
+</script>
 
 
 <!-- External JS -->
