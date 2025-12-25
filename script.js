@@ -42,13 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
-
-
-
-
   // Pre-filled WhatsApp message for 1 Day Website
   const oneDayWebsiteBtn = document.getElementById('oneDayWebsiteBtn');
   const whatsappLink = document.getElementById('whatsappLink');
@@ -61,3 +54,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // Open WhatsApp link in a new tab
     window.open(url, "_blank");
   });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const gmbPopup = document.getElementById("gmbPopup");
+
+  function showGmbPopup() {
+    gmbPopup.style.display = "flex";
+    document.body.classList.add("popup-open");
+  }
+
+  window.closeGmbPopup = function () {
+    gmbPopup.style.display = "none";
+    document.body.classList.remove("popup-open");
+  };
+
+  /* AUTO OPEN AFTER PAGE LOAD */
+  setTimeout(showGmbPopup, 12000);
+
+  /* OPEN ON SCROLL */
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+      showGmbPopup();
+    }
+  });
+
+});
