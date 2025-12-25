@@ -23,221 +23,6 @@
 
   <!-- PAGE STYLES -->
  
- 
- <style>
-    :root{
-      --bg:#020617;
-      --panel:#020617;
-      --border:#1f2937;
-      --text:#e5e7eb;
-      --muted:#9ca3af;
-      --accent:#38bdf8;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-
-    body{
-      margin:0;
-      font-family:Inter,system-ui;
-      background:var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
-    }
-
-    a{text-decoration:none;color:inherit}
-
-    /* =====================
-       ELITE PRICING SECTION
-    ===================== */
-    .elite-pricing{
-      position:relative;
-      padding:140px 20px;
-      overflow:hidden;
-    }
-
-    .elite-pricing::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(700px 250px at 10% 10%, rgba(56,189,248,.08), transparent 45%),
-        radial-gradient(600px 200px at 90% 20%, rgba(14,165,233,.06), transparent 50%);
-      animation:floatGlow 12s ease-in-out infinite alternate;
-      pointer-events:none;
-    }
-
-    @keyframes floatGlow{
-      from{transform:translateY(0)}
-      to{transform:translateY(-40px)}
-    }
-
-    .pricing-container{
-      max-width:1100px;
-      margin:auto;
-      position:relative;
-    }
-
-    .pricing-head{
-      text-align:center;
-      margin-bottom:80px;
-    }
-
-    .pricing-kicker{
-      font-size:13px;
-      letter-spacing:2px;
-      color:var(--accent);
-    }
-
-    .pricing-head h1{
-      font-size:40px;
-      margin:14px 0;
-    }
-
-    .pricing-head h1 span{color:var(--accent)}
-
-    .pricing-head p{
-      color:var(--muted);
-      max-width:640px;
-      margin:auto;
-    }
-
-    .reveal{
-      opacity:0;
-      transform:translateY(40px) scale(.96);
-      transition:all .9s cubic-bezier(.16,1,.3,1);
-    }
-
-    .reveal.visible{
-      opacity:1;
-      transform:none;
-    }
-
-    .pricing-block{
-      margin-bottom:90px;
-    }
-
-    .pricing-block h2{
-      font-size:26px;
-      margin-bottom:30px;
-    }
-
-    .pricing-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:26px;
-    }
-
-    .price-card{
-      position:relative;
-      background:var(--panel);
-      border:1px solid var(--border);
-      border-radius:22px;
-      padding:34px;
-      transition:.5s cubic-bezier(.16,1,.3,1);
-    }
-
-    .price-card::after{
-      content:"";
-      position:absolute;
-      inset:-1px;
-      background:linear-gradient(120deg,transparent 40%,rgba(56,189,248,.35),transparent 60%);
-      opacity:0;
-      transition:.6s;
-    }
-
-    .price-card:hover::after{opacity:1}
-
-    .price-card:hover{
-      transform:translateY(-12px) scale(1.02);
-      box-shadow:
-        0 30px 70px rgba(2,6,23,.85),
-        0 0 0 1px rgba(56,189,248,.35);
-    }
-
-    .tier{
-      color:var(--accent);
-      font-size:13px;
-      letter-spacing:1px;
-    }
-
-    .price{
-      margin-top:18px;
-      font-size:24px;
-      font-weight:800;
-    }
-
-    .highlight{
-      box-shadow:0 0 0 1px var(--accent);
-    }
-
-    .pricing-features{
-      margin-top:26px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    /* DIGITAL PRICING TABLE */
-    .pricing-table{
-      border:1px solid var(--border);
-      border-radius:18px;
-      overflow:hidden;
-    }
-
-    .pricing-row{
-      display:grid;
-      grid-template-columns:2fr 1fr 1fr 1fr;
-      padding:18px 22px;
-      border-bottom:1px solid var(--border);
-      transition:.3s;
-    }
-
-    .pricing-row.head{
-      background:#020617;
-      font-weight:600;
-    }
-
-    .pricing-row:hover{
-      background:linear-gradient(90deg,transparent,rgba(56,189,248,.06),transparent);
-    }
-
-    .pricing-row:last-child{border-bottom:none}
-
-    /* CTA */
-    .pricing-cta{
-      text-align:center;
-      background:#020617;
-      border:1px solid var(--accent);
-      border-radius:26px;
-      padding:60px 30px;
-      position:relative;
-    }
-
-    .pricing-cta::after{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      border-radius:inherit;
-      background:linear-gradient(90deg,#38bdf8,#0ea5e9,#38bdf8);
-      filter:blur(20px);
-      opacity:.25;
-      animation:pulse 3s infinite;
-      z-index:-1;
-    }
-
-    @keyframes pulse{
-      0%,100%{opacity:.25}
-      50%{opacity:.55}
-    }
-
-    @media(max-width:600px){
-      .pricing-row{grid-template-columns:1.5fr 1fr 1fr 1fr;font-size:13px}
-      .pricing-head h1{font-size:32px}
-    }
-  </style>
 </head>
 
 <body>
@@ -263,158 +48,364 @@
   </nav>
 </header>
 
-<!-- ================= PRICING ================= -->
-<section class="elite-pricing" id="pricing">
-  <div class="pricing-container">
 
-    <div class="pricing-head reveal">
-      <span class="pricing-kicker">TRANSPARENT PRICING</span>
-      <h1>Premium Digital Pricing<br><span>Built for Growth</span></h1>
-      <p>Luxury-grade pricing crafted for individuals, startups and fast-growing businesses.</p>
-    </div>
 
-    <!-- ================= WEBSITE PRICING ================= -->
-    <div class="pricing-block reveal">
-      <h2>Website Development</h2>
-
-      <div class="pricing-grid">
-        <div class="price-card"
-             onclick="openWhatsApp('Website Development - Starter (1-3 Pages)', '₹999 - ₹1,999')">
-          <span class="tier">STARTER</span>
-          <h3>1–3 Pages</h3>
-          <p>Home • About • Contact / Services</p>
-          <div class="price">₹999 - ₹1,999</div>
-        </div>
-
-        <div class="price-card highlight"
-             onclick="openWhatsApp('Website Development - Standard (4-5 Pages)', '₹2,999 - ₹4,999')">
-          <span class="tier">STANDARD</span>
-          <h3>4–5 Pages</h3>
-          <p>Home • Services • Gallery / Offers</p>
-          <div class="price">₹2,999 - ₹4,999</div>
-        </div>
-
-        <div class="price-card"
-             onclick="openWhatsApp('Website Development - Advanced (6-9 Pages)', '₹5,999 - ₹8,999')">
-          <span class="tier">ADVANCED</span>
-          <h3>6–9 Pages</h3>
-          <p>SEO Optimized • Showcase</p>
-          <div class="price">₹5,999 - ₹8,999</div>
-        </div>
-      </div>
-
-      <div class="pricing-features">
-        <span>✔ Mobile Friendly</span>
-        <span>✔ WhatsApp & Call</span>
-        <span>✔ Google Map</span>
-        <span>✔ SSL Security 🔒</span>
-        <span>✔ Fast Loading ⚡</span>
-      </div>
-    </div>
-
-    <!-- ================= DIGITAL MARKETING ================= -->
-    <div class="pricing-block reveal">
-      <h2>GMB & Digital Marketing</h2>
-
-      <div class="pricing-table">
-        <div class="pricing-row head">
-          <span>Service</span>
-          <span>Google Map</span>
-          <span>Social Media</span>
-          <span>Meta & Google Ads</span>
-        </div>
-
-        <div class="pricing-row"
-             onclick="openWhatsApp('Account Setup - Google Map', '₹499')">
-          <span>Account Setup</span>
-          <span>₹499</span>
-          <span>₹799</span>
-          <span>₹1,399</span>
-        </div>
-
-        <div class="pricing-row"
-             onclick="openWhatsApp('Ad Campaign Setup - Meta & Google Ads', '₹1,399')">
-          <span>Ad Campaign Setup</span>
-          <span>❌</span>
-          <span>❌</span>
-          <span>₹1,399</span>
-        </div>
-
-        <div class="pricing-row"
-             onclick="openWhatsApp('Profile Update Service', 'Starting from ₹499')">
-          <span>Profile Update</span>
-          <span>₹499</span>
-          <span>₹999</span>
-          <span>₹999</span>
-        </div>
-
-        <div class="pricing-row"
-             onclick="openWhatsApp('Monthly Maintenance Package', '₹1,999 - ₹5,999 / month')">
-          <span>Monthly Maintenance</span>
-          <span>₹1,999</span>
-          <span>₹3,999</span>
-          <span>₹5,999</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ================= MONTHLY PLAN ================= -->
-    <div class="pricing-cta reveal"
-         onclick="openWhatsApp('Complete Growth Package (Monthly)', '₹9,999 / month')">
-      <span class="badge">⭐ Best Value</span>
-      <h3>Complete Growth Package</h3>
-      <p>
-        ✔ Meta + Google Ads<br>
-        ✔ Full GMB Optimization<br>
-        ✔ 12 Social Creatives / Month
-      </p>
-      <div class="price">₹9,999 / month</div>
-      <small>Ad Budget: ₹300 - ₹500/day (separate)</small>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= WHATSAPP SCRIPT ================= -->
-<script>
-  const WHATSAPP_NUMBER = "916381918347"; // CHANGE THIS
-
-  function openWhatsApp(service, price) {
-    const message =
-      `Hello, Veloni!%0A%0A` +
-      `I am interested in the following service:%0A` +
-      ` Service: ${service}%0A` +
-      ` Price: ${price}%0A%0A` +
-      `Please contact me with more details.`;
-
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
-  }
-
-  // Reveal animation
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.2 });
-  revealEls.forEach(el => io.observe(el));
-</script>
-
-<!-- ================= UX IMPROVEMENT ================= -->
 <style>
-  .price-card,
-  .pricing-row,
-  .pricing-cta {
-    cursor: pointer;
-  }
+:root{
+  --bg:#020617;
+  --panel:#050816;
+  --border:rgba(255,255,255,.08);
+  --text:#f8fafc;
+  --muted:#9ca3af;
+  --accent:#38bdf8;
+  --gold:#facc15;
+  --glow:rgba(56,189,248,.45);
+}
+
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+}
+body{
+  font-family:Inter,system-ui;
+  background:radial-gradient(circle at top,#020a1a,#020617);
+  color:var(--text);
+}
+
+/* ================= SECTION ================= */
+.elite-pricing{
+  padding:140px 20px;
+}
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+.head{
+  text-align:center;
+  margin-bottom:90px;
+}
+.head h1{
+  font-size:52px;
+  font-weight:900;
+  margin-bottom:14px;
+}
+.head span{
+  background:linear-gradient(90deg,var(--accent),#0ea5e9);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.head p{
+  color:var(--muted);
+}
+
+/* ================= 3D TILT ================= */
+.tilt-wrap{
+  max-width:720px;
+  margin:auto;
+  perspective:1200px;
+}
+.tilt-card{
+  background:linear-gradient(180deg,var(--panel),#02040d);
+  border:1px solid var(--border);
+  border-radius:32px;
+  padding:46px;
+  transition:transform .15s ease, box-shadow .4s, border-color .4s;
+  transform-style:preserve-3d;
+  cursor:pointer;
+}
+.tilt-card:hover{
+  border-color:var(--accent);
+  box-shadow:
+    0 40px 110px rgba(0,0,0,.9),
+    0 0 40px var(--glow);
+}
+
+/* DEPTH */
+.depth-1{transform:translateZ(25px)}
+.depth-2{transform:translateZ(45px)}
+.depth-3{transform:translateZ(65px)}
+
+/* ================= QUICK SITE ================= */
+.quicksite{
+  margin-bottom:120px;
+}
+.quicksite .tilt-card{
+  border:2px solid var(--gold);
+  box-shadow:0 0 60px rgba(250,204,21,.22);
+}
+.q-badge{
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:13px;
+}
+.q-price{
+  font-size:42px;
+  font-weight:900;
+  margin:22px 0;
+}
+.q-features{
+  line-height:2;
+  color:var(--muted);
+}
+
+/* ================= TOGGLE ================= */
+.toggle{
+  display:flex;
+  justify-content:center;
+  margin:70px 0 60px;
+}
+.toggle-box{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:8px;
+  display:flex;
+  position:relative;
+  max-width:360px;
+  width:100%;
+}
+.toggle-btn{
+  flex:1;
+  text-align:center;
+  padding:14px 0;
+  font-weight:800;
+  color:var(--muted);
+  cursor:pointer;
+  z-index:2;
+}
+.toggle-btn.active{color:#000}
+.indicator{
+  position:absolute;
+  top:6px;
+  bottom:6px;
+  left:6px;
+  width:calc(50% - 6px);
+  background:linear-gradient(90deg,var(--accent),#0ea5e9);
+  border-radius:999px;
+  transition:.4s cubic-bezier(.16,1,.3,1);
+}
+
+/* ================= GRID ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:32px;
+}
+.price{
+  font-size:34px;
+  font-weight:900;
+  margin:22px 0;
+}
+.features{
+  color:var(--muted);
+  line-height:2;
+}
+.cta{
+  margin-top:26px;
+  display:inline-block;
+  padding:14px 40px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--accent),#0ea5e9);
+  color:#000;
+  font-weight:900;
+}
+
+/* ================= GUIDANCE CTA ================= */
+.elite-guidance{
+  padding:120px 20px;
+  display:flex;
+  justify-content:center;
+  margin-top: -80PX;
+}
+.elite-guidance-box{
+  max-width:860px;
+  text-align:center;
+  padding:64px 56px;
+  border-radius:36px;
+  background:
+    radial-gradient(circle at top, rgba(56,189,248,.12), transparent 60%),
+    linear-gradient(180deg,#050816,#02040d);
+  border:1px solid var(--border);
+  box-shadow:0 40px 120px rgba(0,0,0,.9);
+}
+.guidance-eyebrow{
+  font-size:12px;
+  letter-spacing:3px;
+  color:var(--accent);
+  font-weight:800;
+}
+.elite-guidance-box h2{
+  font-size:42px;
+  font-weight:900;
+  margin:18px 0;
+}
+.elite-guidance-box span{
+  background:linear-gradient(90deg,var(--accent),#0ea5e9);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.elite-guidance-box p{
+  font-size:16.5px;
+  line-height:1.9;
+  color:var(--muted);
+  margin-bottom:36px;
+}
+.guidance-btn{
+  padding:18px 52px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--accent),#0ea5e9);
+  color:#000;
+  font-weight:900;
+  box-shadow:0 20px 60px rgba(56,189,248,.35);
+  display:inline-block;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .elite-pricing{padding:90px 14px}
+  .head h1{font-size:34px}
+  .tilt-card{padding:34px}
+  .q-price{font-size:34px}
+  .elite-guidance-box{padding:44px 26px}
+  .elite-guidance-box h2{font-size:23px}
+}
 </style>
 
 
-<!-- ===============================
-     ULTRA PREMIUM FOOTER
-================================ -->
+<section class="elite-pricing">
+<div class="container">
+
+<div class="head">
+<h1>Veloni Digital<br><span>Transparent Smart Pricing</span></h1>
+<p>Start small. Scale smart.</p>
+</div>
+
+<div class="quicksite tilt-wrap">
+<div class="tilt-card" onclick="wa('Veloni QuickSite','₹1,999')">
+<div class="q-badge depth-1">🟡 VELONI QUICKSITE</div>
+<h2 class="depth-2">Launch Fast. Look Professional.</h2>
+<div class="q-price depth-3">₹1,999</div>
+<div class="q-features depth-1">
+✔ Single Page Website<br>
+✔ Business Details<br>
+✔ WhatsApp Button<br>
+✔ Mobile Friendly<br>
+✔ Fast Delivery
+</div>
+<div class="cta depth-2">Get QuickSite</div>
+</div>
+</div>
+
+<div class="toggle">
+<div class="toggle-box">
+<div class="indicator" id="indicator"></div>
+<div class="toggle-btn active" onclick="setPlan(event,'one')">Websites</div>
+<div class="toggle-btn" onclick="setPlan(event,'monthly')">Marketing</div>
+</div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+</div>
+</section>
+
+<section class="elite-guidance">
+<div class="elite-guidance-box">
+<span class="guidance-eyebrow">NOT SURE YET?</span>
+<h2>Choosing the Right Plan<br><span>Should Feel Clear. Not Confusing.</span></h2>
+<p>
+Every business is at a different stage.<br><br>
+If you’re unsure which option fits your goal,
+just drop us a message.
+Our team will understand your needs
+and guide you honestly.
+</p>
+
+<a class="guidance-btn"
+     target="_blank"
+     rel="noopener"
+     href="https://wa.me/916381918347?text=Hi%20Veloni%20!%0AI%27m%20confused%20about%20pricing.%20Please%20guide%20me.">
+     Talk to Veloni Team
+  </a>
+
+</div>
+</section>
+
+<script>
+const WA="916381918347";
+const plans={
+one:[
+{n:"Basic Starter",p:"₹5,999",f:["1–3 Pages","Responsive","WhatsApp","Google Map"]},
+{n:"Standard Business",p:"₹12,999",f:["Up to 6 Pages","Pro UI","Forms","SEO Ready"]},
+{n:"Premium Business",p:"₹18,999",f:["8–10 Pages","Animations","Gallery","SEO+"]}
+],
+monthly:[
+{n:"Social Media",p:"₹4,999 / mo",f:["Maintenance","9 Creatives","Updates"]},
+{n:"Meta Ads",p:"₹5,999 / mo",f:["Analytics","Lead Tracking","Support"]},
+{n:"Google Ads",p:"₹9,999 / mo",f:["Prompt Handling","Reports","Priority Support"]}
+]
+};
+
+const grid=document.getElementById("grid");
+const indicator=document.getElementById("indicator");
+
+function render(type){
+grid.innerHTML="";
+plans[type].forEach(p=>{
+grid.innerHTML+=`
+<div class="tilt-wrap">
+<div class="tilt-card" onclick="wa('${p.n}','${p.p}')">
+<h3 class="depth-2">${p.n}</h3>
+<div class="price depth-3">${p.p}</div>
+<div class="features depth-1">${p.f.map(x=>"✔ "+x).join("<br>")}</div>
+<div class="cta depth-2">Get Started</div>
+</div></div>`;
+});
+}
+
+function setPlan(e,t){
+document.querySelectorAll(".toggle-btn").forEach(b=>b.classList.remove("active"));
+e.target.classList.add("active");
+indicator.style.transform=t==="monthly"?"translateX(100%)":"translateX(0)";
+render(t);
+}
+
+function wa(s,p){
+window.open(`https://wa.me/${WA}?text=`+
+encodeURIComponent(`Hello Veloni 👋\nInterested in ${s}\nBudget: ${p}`));
+}
+
+/* TILT */
+if(window.matchMedia("(pointer:fine)").matches){
+document.addEventListener("mousemove",e=>{
+document.querySelectorAll(".tilt-wrap").forEach(w=>{
+const c=w.querySelector(".tilt-card");
+if(!c) return;
+const r=w.getBoundingClientRect();
+if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom){
+c.style.transform="rotateX(0deg) rotateY(0deg)";
+return;
+}
+const x=(e.clientX-r.left)/r.width-.5;
+const y=(e.clientY-r.top)/r.height-.5;
+c.style.transform=`rotateX(${y*-14}deg) rotateY(${x*14}deg)`;
+});
+});
+}
+
+render("one");
+</script>
+
+
+
+
+
+
+
 <footer class="premium-footer">
   <div class="footer-glow"></div>
 
@@ -479,11 +470,6 @@
     <span>Premium Web Studio • Smart e-Service</span>
   </div>
 </footer>
-
-
-
-
-
 
 
 </body>
