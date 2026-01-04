@@ -55,29 +55,3 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open(url, "_blank");
   });
 
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  const gmbPopup = document.getElementById("gmbPopup");
-
-  function showGmbPopup() {
-    gmbPopup.style.display = "flex";
-    document.body.classList.add("popup-open");
-  }
-
-  window.closeGmbPopup = function () {
-    gmbPopup.style.display = "none";
-    document.body.classList.remove("popup-open");
-  };
-
-  /* AUTO OPEN AFTER PAGE LOAD */
-  setTimeout(showGmbPopup, 12000);
-
-  /* OPEN ON SCROLL */
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 500) {
-      showGmbPopup();
-    }
-  });
-
-});
