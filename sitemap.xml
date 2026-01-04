@@ -2,15 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://velonidigital.github.io/com/</loc>
+    <loc>https://velonidigital.com/</loc>
   </url>
 
   <url>
-    <loc>https://velonidigital.github.io/com/service.html</loc>
+    <loc>https://velonidigital.com/service.html</loc>
   </url>
 
   <url>
-    <loc>https://velonidigital.github.io/com/pricing.html</loc>
+    <loc>https://velonidigital.com/pricing.html</loc>
+  </url>
+
+    <url>
+    <loc>https://velonidigital.com/appointment.html</loc>
+  </url>
+
+  <url>
+    <loc>https://velonidigital.comfeatures.html</loc>
   </url>
 
 </urlset>
