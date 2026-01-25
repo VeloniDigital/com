@@ -46,7 +46,7 @@
       <div class="logo">V</div>
       <div>
         <div style="font-size:18px;color:#fff;">Veloni Digital</div>
-        <div class="kicker">The Premium Web Studio • Smart e-Services</div>
+        <div class="kicker">Premium Web Studio • Smart e-Services</div>
       </div>
     </div>
   </a>
@@ -54,8 +54,8 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="service.html" class="active">Services</a>
-    <a href="pricing.html">Pricing</a>
-        <a href="appointment.html" class="nav-link">Book an Appointment</a>
+    <a href="features.html" class="features-btn"> Features </a>
+    <a href="appointment.html" class="nav-link">Book an Appointment</a>
     <a class="cta" href="index.html">Start Project</a>
   </nav>
 </header>
@@ -180,6 +180,7 @@ body{
   max-width:360px;
   width:100%;
 }
+
 .toggle-btn{
   flex:1;
   text-align:center;
@@ -189,6 +190,7 @@ body{
   cursor:pointer;
   z-index:2;
 }
+
 .toggle-btn.active{color:#000}
 .indicator{
   position:absolute;
@@ -202,28 +204,40 @@ body{
 }
 
 /* ================= GRID ================= */
+
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:32px;
 }
+
 .price{
   font-size:34px;
   font-weight:900;
   margin:22px 0;
 }
+
 .features{
   color:var(--muted);
   line-height:2;
 }
-.cta{
-  margin-top:26px;
-  display:inline-block;
-  padding:14px 40px;
-  border-radius:999px;
-  background:linear-gradient(90deg,var(--accent),#0ea5e9);
-  color:#000;
-  font-weight:900;
+
+.cta-explore {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 34px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #00f5ff, #6a5cff);
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  animation: pulseGlow 2.4s infinite;
+}
+
+.cta-explore:hover {
+  transform: translateY(-3px) scale(1.02);
 }
 
 /* ================= GUIDANCE CTA ================= */
